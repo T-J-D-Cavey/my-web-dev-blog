@@ -12,3 +12,5 @@ export default function Hero() {
     </section>
   );
 }
+
+// NEED TO UPDATE TEXT
