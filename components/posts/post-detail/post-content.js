@@ -50,3 +50,4 @@ export default function PostContent(props) {
     </article>
   );
 }
+// NEED TO UPDATE THE ALT TO BE DYNAMIC BASED ON THE TITLE
