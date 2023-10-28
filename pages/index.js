@@ -17,7 +17,6 @@ export function getStaticProps() {
   return {
     props: {
       posts: featuredPosts,
-    },
-    revalidate: 86400,
+    }
   };
 }

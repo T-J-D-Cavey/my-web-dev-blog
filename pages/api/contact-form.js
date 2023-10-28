@@ -20,11 +20,14 @@ export default async function handler(req, res) {
       name,
       message,
     };
-    // send data to database I NEED TO WHITELIST THE SERVER IP ADDRESS WHEN THIS IS DEPLOYED
+    // I NEED TO WHITELIST THE SERVER IP ADDRESS WHEN THIS IS DEPLOYED (OR "ALLOW ACCESS FROM ANYWHERE")
+
+    // I NEED TO SET UP ENVIRONMENT VARIABLES AND SECRETS AND REPLACE SOME OF THE CODE IN THIS FILE WITH KEYS
+    // WHICH I WILL ASSIGN THE VALUES OF WHEN DEPLOYING. E.G MY DATABASE USERNAME, PASSWORD, DB NAME 
     let client;
     try {
       client = await MongoClient.connect(
-        `mongodb+srv://blog_admin_1:blog_admin_1@tjdcaveydb.fabaugr.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+        `mongodb+srv://blog_admin_1:blog_admin_1@tjdcaveydb.fabaugr.mongodb.net/blog_dev?retryWrites=true&w=majority`
       );
     } catch (error) {
       res.status(500).json({ message: "Could not connect to database." });

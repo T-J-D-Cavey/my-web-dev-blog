@@ -13,7 +13,6 @@ export function getStaticProps() {
   return {
     props: {
       posts: posts
-    },
-    revalidate: 86400
+    }
   }
 }
