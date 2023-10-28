@@ -1,7 +1,7 @@
 {
-  "name": "practice-nextjs-blog",
-  "version": "0.1.0",
-  "private": true,
+  "name": "my-web-dev-blog",
+  "version": "0.2.0",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -22,4 +22,4 @@ export async function sendData(data, apiRoute) {
   }
 }
 
-// Can create a fetchData helper function as well
+// Need to create a fetchData helper function as well
