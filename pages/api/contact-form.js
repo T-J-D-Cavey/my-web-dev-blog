@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { email, name, message } = req.body;
-    // NEED TO DO MORE INPUT VALIDATION. CONSIDER USING A THIRD PARTY LIBRARY:
+    // NEED TO DO MORE INPUT VALIDATION. CONSIDER USING A THIRD PARTY LIBRARY: NEEDS RESEARCHING
     if (
       !email ||
       !email.includes("@") ||
