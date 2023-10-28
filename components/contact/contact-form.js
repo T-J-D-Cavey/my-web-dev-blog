@@ -109,3 +109,5 @@ export default function ContactForm() {
     </section>
   );
 }
+
+// NEED TO ADD LINKS TO MY GITHUB, MY PORTFOLIO AND LINKEDIN
