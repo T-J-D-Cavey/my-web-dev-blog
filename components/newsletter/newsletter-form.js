@@ -1,37 +1,43 @@
-import Image from "next/image";
-import classes from "./newsletter-form.module.css";
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import classes from "./newsletter-form.module.css";
 
 export default function NewsletterForm() {
-const [showing, setShowing] = useState(false);
-    const appearClass = showing ? classes.form : classes.showing; 
-    const buttonMove = showing ? classes.buttonUp : classes.button;
+  const [show, setShow] = useState(false);
 
-    function handleShowing(e) {
-        e.preventDefault();
-        setShowing((prevState) => !prevState);
-    }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className={classes.container}>
-        <div className={classes.buttonContainer}>
+      <Button variant="outline-dark" onClick={handleShow} className={classes.grey500bg} size="sm">
+        SIGN UP
+      </Button>
 
-      <button onClick={handleShowing} className={buttonMove}>
-        <Image
-          src="/images/site/down-pointer.png"
-          width={40}
-          height={40}
-          alt="downward pointer"
-          />
-      </button>
-          </div>
-      <form className={appearClass}>
-        <div className={classes.div}>
-          <input type="email" id="email" placeholder="email@address"/>
-        </div>
-        <div className={classes.div}>
-          <button>Sign up</button>
-        </div>
-      </form>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton className={classes.grey500bg}>
+          <Modal.Title className={classes.grey800color}>EMAIL SUBSCRIPTION:</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className={classes.grey500bg}>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label className={classes.grey800color}>Email address:</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer className={classes.grey500bg}>
+          <Button variant="outline-dark" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
