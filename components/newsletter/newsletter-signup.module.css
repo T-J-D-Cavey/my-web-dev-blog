@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-grey-500);
+}
+
+.h2 {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-grey-500);
+}
+.p {
+    position: relative;
+    z-index: 2;
+    background-color: red;
+}
