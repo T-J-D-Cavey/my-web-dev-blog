@@ -1,19 +1,29 @@
 import NewsletterForm from "./newsletter-form";
+import Notification from "../ui/notification";
 import classes from "./newsletter-signup.module.css";
 
 export default function NewsletterSignup() {
   async function fetchHandler(userEmail) {
-    const response = await fetch("/api/email-subscription", {
-      method: "POST",
-      body: JSON.stringify({ email: userEmail }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // ADD NOTIFICATION LOGIC TO SHOW SUCCESS
+    try {
+      const response = await fetch("/api/email-subscription", {
+        method: "POST",
+        body: JSON.stringify({ email: userEmail }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    console.log(data);
+      if (!data.ok) {
+        throw new Error(data.message);
+      }
+
+      // ADD NOTIFICATION LOGIC TO SHOW SUCCESS
+    } catch (error) {
+      // ADD NOTIFICATION LOGIC TO SHOW ERROR
+    }
   }
 
   return (
