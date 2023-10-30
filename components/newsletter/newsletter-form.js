@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import classes from "./newsletter-form.module.css";
 
-export default function NewsletterForm() {
+export default function NewsletterForm({fetchHandler}) {
   const [show, setShow] = useState(false);
+  const emailInputRef = useRef()
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setShow(false);
+    // ADD CLIENT SIDE VALIDATION HERE (LIB?)
+    fetchHandler(emailInputRef.current.value)
+  }
 
   return (
     <div className={classes.container}>
@@ -28,13 +36,17 @@ export default function NewsletterForm() {
                 type="email"
                 placeholder="name@example.com"
                 autoFocus
+                ref={emailInputRef}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer className={classes.grey500bg}>
           <Button variant="outline-dark" onClick={handleClose}>
-            Close
+            CLOSE
+          </Button>
+          <Button variant="dark" onClick={handleSubmit}>
+            SUBMIT
           </Button>
         </Modal.Footer>
       </Modal>
