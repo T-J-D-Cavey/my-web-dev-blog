@@ -27,8 +27,8 @@ export default function NewsletterSignup() {
     setRequestStatus("pending");
 
     const result = await sendData(
-      JSON.stringify({ email: userEmail }),
-      "/api/email-subscription"
+      { email: userEmail },
+      "/api/newsletter-signup"
     );
 
     if (!result.success) {
