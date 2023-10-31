@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getPostData, getPostsFiles } from "@/helpers/posts-utils";
+import { getPostData, getPostsFiles } from "@/client/helpers/posts-utils";
 import PostContent from "../../components/posts/post-detail/post-content";
 
 export default function PostDetailsPage(props) {

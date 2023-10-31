@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import Notification from "../ui/notification";
-import { sendData } from "../../helpers/api-utils";
+import { sendData } from "../../client/helpers/api-utils";
 import classes from "./contact-form.module.css";
 
 // NEED TO ADJUST THIS LOCAL STATE ONCE GLOBAL STATE IS SET UP
@@ -69,11 +69,10 @@ export default function ContactForm() {
   }
 
   if (requestStatus === "error") {
-    console.log(errorStatus)
     notificationData = {
       status: "error",
       title: "Error",
-      message: "Failed to send message",
+      message: `${errorStatus}`,
     };
   }
 

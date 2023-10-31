@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { connectToDB } from "../../server/helpers/data-base-utils";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -20,16 +20,14 @@ export default async function handler(req, res) {
       name,
       message,
     };
-    // I NEED TO WHITELIST THE SERVER IP ADDRESS WHEN THIS IS DEPLOYED (OR "ALLOW ACCESS FROM ANYWHERE")
 
     // I NEED TO SET UP ENVIRONMENT VARIABLES AND SECRETS AND REPLACE SOME OF THE CODE IN THIS FILE WITH KEYS
-    // WHICH I WILL ASSIGN THE VALUES OF WHEN DEPLOYING. E.G MY DATABASE USERNAME, PASSWORD, DB NAME 
-    let client;
-    try {
-      client = await MongoClient.connect(
-        `mongodb+srv://blog_admin_1:blog_admin_1@tjdcaveydb.fabaugr.mongodb.net/blog_dev?retryWrites=true&w=majority`
-      );
-    } catch (error) {
+    // WHICH I WILL ASSIGN THE VALUES OF WHEN DEPLOYING. E.G MY DATABASE USERNAME, PASSWORD, DB NAME
+
+    const client = await connectToDB(
+      `mongodb+srv://blog_admin_1:blog_admin_1@tjdcaveydb.fabaugr.mongodb.net/blog_dev?retryWrites=true&w=majority`
+    );
+    if (!client) {
       res.status(500).json({ message: "Could not connect to database." });
       return;
     }
@@ -37,10 +35,12 @@ export default async function handler(req, res) {
     let result;
     try {
       result = await db.collection("blog-messages").insertOne(newMessage);
-    } catch(error) {
+    } catch (error) {
       client.close();
-      res.status(500).json({ message: "Could not store your details in our database." });
-      return
+      res
+        .status(500)
+        .json({ message: "Could not store your details in our database." });
+      return;
     }
 
     client.close();

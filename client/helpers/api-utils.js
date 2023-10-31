@@ -15,10 +15,12 @@ export async function sendData(data, apiRoute) {
       throw new Error(resData.message || "Something went wrong");
     }
 
-    return {success: true, message: "Success!"};
+    return { success: true, message: "Success!" };
   } catch (error) {
-    return {success: false, message: error};
+    return { success: false, message: error };
   }
 }
 
-// Need to create a fetchData helper function as well
+// Need to create a fetchData helper function as well, after comments feature is added.
+
+

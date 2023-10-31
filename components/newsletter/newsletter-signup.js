@@ -1,37 +1,44 @@
 import { useState, useEffect } from "react";
-import { sendData } from "@/helpers/api-utils";
+import { sendData } from "@/client/helpers/api-utils";
 import NewsletterForm from "./newsletter-form";
 import Notification from "../ui/notification";
 import classes from "./newsletter-signup.module.css";
 
 export default function NewsletterSignup() {
   const [requestStatus, setRequestStatus] = useState();
+  const [errorStatus, setErrorStatus] = useState();
+
   let notificationData;
 
   useEffect(() => {
-    let timeoutId
-    if(requestStatus === 'success' || requestStatus === 'error') {
+    let timeoutId;
+    if (requestStatus === "success" || requestStatus === "error") {
       timeoutId = setTimeout(() => {
-        setRequestStatus('')
-      }, 2500)
-    };
+        setRequestStatus("");
+        setErrorStatus("");
+      }, 2500);
+    }
     return () => {
       clearTimeout(timeoutId);
-    }
-  }, [requestStatus])
+    };
+  }, [requestStatus]);
 
   async function fetchHandler(userEmail) {
-    setRequestStatus('pending');
+    setRequestStatus("pending");
 
-      const result = await sendData(JSON.stringify({email: userEmail}), "/api/email-subscription");
+    const result = await sendData(
+      JSON.stringify({ email: userEmail }),
+      "/api/email-subscription"
+    );
 
-      if(!result.success) {
-        setRequestStatus('error');
-        return;
-      }
-
-      setRequestStatus('success');
+    if (!result.success) {
+      setRequestStatus("error");
+      setErrorStatus(result.message);
       return;
+    }
+
+    setRequestStatus("success");
+    return;
   }
 
   if (requestStatus === "pending") {
@@ -54,7 +61,7 @@ export default function NewsletterSignup() {
     notificationData = {
       status: "error",
       title: "Error",
-      message: "Failed to send email address.",
+      message: `${errorStatus}`,
     };
   }
 
