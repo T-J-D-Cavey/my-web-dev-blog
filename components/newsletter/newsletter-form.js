@@ -37,6 +37,7 @@ export default function NewsletterForm({fetchHandler}) {
                 placeholder="name@example.com"
                 autoFocus
                 ref={emailInputRef}
+                required
               />
             </Form.Group>
           </Form>

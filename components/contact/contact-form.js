@@ -9,14 +9,14 @@ export default function ContactForm() {
   const nameInputRef = useRef();
   const messageInputRef = useRef();
   const [requestStatus, setRequestStatus] = useState();
-  const [errorStatus, setErrorStatus] = useState();
+  const [statusMessage, setStatusMessage] = useState();
   let notificationData;
 
   useEffect(() => {
     if(requestStatus === 'success' || requestStatus === 'error') {
       const timeoutId = setTimeout(() => {
         setRequestStatus(null);
-        setErrorStatus(null);
+        setStatusMessage(null);
       }, 2000);
 
       return () => {
@@ -42,9 +42,10 @@ export default function ContactForm() {
 
     if (!fetchSuccess.success) {
       setRequestStatus("error");
-      setErrorStatus(fetchSuccess.message);
+      setStatusMessage(fetchSuccess.message);
       return;
     }
+    setStatusMessage(fetchSuccess.message);
     setRequestStatus("success");
     emailInputRef.current.value = "";
     nameInputRef.current.value = "";
@@ -64,7 +65,7 @@ export default function ContactForm() {
     notificationData = {
       status: "success",
       title: "Success",
-      message: "Sent message!",
+      message: `${statusMessage}`,
     };
   }
 
@@ -72,7 +73,7 @@ export default function ContactForm() {
     notificationData = {
       status: "error",
       title: "Error",
-      message: `${errorStatus}`,
+      message: `${statusMessage}`,
     };
   }
 

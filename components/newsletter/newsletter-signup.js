@@ -14,8 +14,8 @@ export default function NewsletterSignup() {
     let timeoutId;
     if (requestStatus === "success" || requestStatus === "error") {
       timeoutId = setTimeout(() => {
-        setRequestStatus("");
-        setStatusMessage("");
+        setRequestStatus(null);
+        setStatusMessage(null);
       }, 2500);
     }
     return () => {
