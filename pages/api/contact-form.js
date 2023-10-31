@@ -1,12 +1,11 @@
+import validator from "validator";
 import { connectToDB } from "../../server/helpers/data-base-utils";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { email, name, message } = req.body;
-    // NEED TO DO MORE INPUT VALIDATION. CONSIDER USING A THIRD PARTY LIBRARY: NEEDS RESEARCHING
     if (
-      !email ||
-      !email.includes("@") ||
+      !validator.isEmail(email) ||
       !name ||
       name.trim() === "" ||
       !message ||
@@ -15,10 +14,12 @@ export default async function handler(req, res) {
       res.status(422).json({ message: "Invalid input" });
       return;
     }
-    const newMessage = {
-      email,
-      name,
-      message,
+
+
+    const sanitizedData = {
+      email: validator.escape(email),
+      name: validator.escape(name),
+      message: validator.escape(message),
     };
 
     // I NEED TO SET UP ENVIRONMENT VARIABLES AND SECRETS AND REPLACE SOME OF THE CODE IN THIS FILE WITH KEYS
@@ -34,7 +35,7 @@ export default async function handler(req, res) {
     const db = client.db();
     let result;
     try {
-      result = await db.collection("blog-messages").insertOne(newMessage);
+      result = await db.collection("blog-messages").insertOne(sanitizedData);
     } catch (error) {
       client.close();
       res
@@ -47,14 +48,14 @@ export default async function handler(req, res) {
 
     res.status(201).json({
       message:
-        "Your message and details have been received. I'll get back to you shortly.",
+        "Your message and details have been received.",
     });
 
     return;
   } else {
     res.status(200).json({
       message:
-        "An error with your request. Your details and message have not been stored. Please try again.",
+        "An error with your request. Please try again.",
     });
     return;
   }

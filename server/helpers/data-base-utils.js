@@ -11,3 +11,5 @@ export async function connectToDB(path) {
       process.exit();
     }
   }
+
+// I COULD REFECOTR THE VALIDATION CODE INTO HELPER FUNCTIONS HERE AND EXPORT THEM TO EACH API PAGE

@@ -15,7 +15,7 @@ export async function sendData(data, apiRoute) {
       throw new Error(resData.message || "Something went wrong");
     }
 
-    return { success: true, message: "Success!" };
+    return { success: true, message: resData.message };
   } catch (error) {
     return { success: false, message: error };
   }

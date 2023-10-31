@@ -6,7 +6,7 @@ import classes from "./newsletter-signup.module.css";
 
 export default function NewsletterSignup() {
   const [requestStatus, setRequestStatus] = useState();
-  const [errorStatus, setErrorStatus] = useState();
+  const [statusMessage, setStatusMessage] = useState();
 
   let notificationData;
 
@@ -15,7 +15,7 @@ export default function NewsletterSignup() {
     if (requestStatus === "success" || requestStatus === "error") {
       timeoutId = setTimeout(() => {
         setRequestStatus("");
-        setErrorStatus("");
+        setStatusMessage("");
       }, 2500);
     }
     return () => {
@@ -33,10 +33,10 @@ export default function NewsletterSignup() {
 
     if (!result.success) {
       setRequestStatus("error");
-      setErrorStatus(result.message);
+      setStatusMessage(result.message);
       return;
     }
-
+    setStatusMessage(result.message);
     setRequestStatus("success");
     return;
   }
@@ -45,7 +45,7 @@ export default function NewsletterSignup() {
     notificationData = {
       status: "pending",
       title: "Sending...",
-      message: "Sending your details",
+      message: "Sending your email details",
     };
   }
 
@@ -53,7 +53,7 @@ export default function NewsletterSignup() {
     notificationData = {
       status: "success",
       title: "Success",
-      message: "Your details have been received!",
+      message: `${statusMessage}`,
     };
   }
 
@@ -61,7 +61,7 @@ export default function NewsletterSignup() {
     notificationData = {
       status: "error",
       title: "Error",
-      message: `${errorStatus}`,
+      message: `${statusMessage}`,
     };
   }
 
