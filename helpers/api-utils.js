@@ -17,7 +17,6 @@ export async function sendData(data, apiRoute) {
 
     return {success: true, message: "Success!"};
   } catch (error) {
-    console.log(error);
     return {success: false, message: error};
   }
 }

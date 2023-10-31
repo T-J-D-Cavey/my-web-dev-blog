@@ -1,29 +1,61 @@
+import { useState, useEffect } from "react";
+import { sendData } from "@/helpers/api-utils";
 import NewsletterForm from "./newsletter-form";
 import Notification from "../ui/notification";
 import classes from "./newsletter-signup.module.css";
 
 export default function NewsletterSignup() {
+  const [requestStatus, setRequestStatus] = useState();
+  let notificationData;
+
+  useEffect(() => {
+    let timeoutId
+    if(requestStatus === 'success' || requestStatus === 'error') {
+      timeoutId = setTimeout(() => {
+        setRequestStatus('')
+      }, 2500)
+    };
+    return () => {
+      clearTimeout(timeoutId);
+    }
+  }, [requestStatus])
+
   async function fetchHandler(userEmail) {
-    // ADD NOTIFICATION LOGIC TO SHOW SUCCESS
-    try {
-      const response = await fetch("/api/email-subscription", {
-        method: "POST",
-        body: JSON.stringify({ email: userEmail }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    setRequestStatus('pending');
 
-      const data = await response.json();
+      const result = await sendData(JSON.stringify({email: userEmail}), "/api/email-subscription");
 
-      if (!data.ok) {
-        throw new Error(data.message);
+      if(!result.success) {
+        setRequestStatus('error');
+        return;
       }
 
-      // ADD NOTIFICATION LOGIC TO SHOW SUCCESS
-    } catch (error) {
-      // ADD NOTIFICATION LOGIC TO SHOW ERROR
-    }
+      setRequestStatus('success');
+      return;
+  }
+
+  if (requestStatus === "pending") {
+    notificationData = {
+      status: "pending",
+      title: "Sending...",
+      message: "Sending your details",
+    };
+  }
+
+  if (requestStatus === "success") {
+    notificationData = {
+      status: "success",
+      title: "Success",
+      message: "Your details have been received!",
+    };
+  }
+
+  if (requestStatus === "error") {
+    notificationData = {
+      status: "error",
+      title: "Error",
+      message: "Failed to send email address.",
+    };
   }
 
   return (
@@ -32,6 +64,13 @@ export default function NewsletterSignup() {
         <h3>Get an email for every new post:</h3>
       </div>
       <NewsletterForm fetchHandler={fetchHandler} />
+      {requestStatus && (
+        <Notification
+          status={notificationData.status}
+          title={notificationData.title}
+          message={notificationData.message}
+        />
+      )}
     </section>
   );
 }
