@@ -6,13 +6,13 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{`< T >'s Blog`}</title>
+        <title>Who Needs Boot Camp?</title>
         <meta
           name="description"
-          content="Tim's web development blog. A learning journey and a learner's journal."
+          content="Tim's web development blog. A learning journey."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.png" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -26,8 +26,6 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
-// NEED TO UPDATE FAVICON
 
-// NEED TO ADD CONTEXT LOGIC TO HAVE APP WIDE STATE FOR STATUS BAR, WHEN COMMENTS FEATURE IS ADDED
 
 // NEED TO CONSIDER A FOOTER HERE FOR ALL PAGES

@@ -26,14 +26,14 @@
   }
   
   .hero h1 {
-    font-size: var(--size-16);
+    font-size: var(--size-12);
     margin: var(--size-4) 0;
-    color: var(--color-grey-300);
+    color: var(--color-grey-100);
   }
   
   .hero p {
     font-size: var(--size-6);
-    color: var(--color-grey-200);
+    color: var(--color-grey-100);
     width: 90%;
     max-width: 40rem;
     margin: auto;

@@ -5,12 +5,12 @@ export default function Hero() {
   return (
     <section className={classes.hero}>
       <div className={classes.image}>
-        <Image src="/images/site/photo-of-tim.JPG" alt="An image showing Tim" width={400} height={400}/>
+        <Image src="/images/site/photo-of-tim-2.jpeg" alt="An image showing Tim" width={400} height={400}/>
       </div>
-      <h1>Hi, I'm Tim</h1>
-      <p>I blog about my self taught journey into web development.</p>
+      <h1>Who Needs Boot Camp?</h1>
+      <p>Tim's web dev blog. A learning journey.</p>
     </section>
   );
 }
 
-// NEED TO UPDATE TEXT AND CONSIDER TS PARTICLES ANIMATION AND BETTER STYLING 
+// NEED TO CONSIDER TS PARTICLES ANIMATION AND BETTER STYLING 

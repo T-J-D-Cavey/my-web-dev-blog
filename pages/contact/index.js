@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact Me</title>
+        <title>Contact Tim</title>
         <meta
           name="description"
           content="Send me a message and your contact details so we can connect."
