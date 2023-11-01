@@ -38,3 +38,10 @@
     max-width: 40rem;
     margin: auto;
   }
+
+  @media screen and (max-width: 300px) {
+    .image {
+      width: 200px;
+      height: 200px;
+    }
+  }
