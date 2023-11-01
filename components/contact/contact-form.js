@@ -1,9 +1,10 @@
 import { useRef, useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
 import Notification from "../ui/notification";
 import { sendData } from "../../client/helpers/api-utils";
+import ContactSocials from "./contact-socials";
 import classes from "./contact-form.module.css";
 
-// NEED TO ADJUST THIS LOCAL STATE ONCE GLOBAL STATE IS SET UP
 export default function ContactForm() {
   const emailInputRef = useRef();
   const nameInputRef = useRef();
@@ -13,25 +14,23 @@ export default function ContactForm() {
   let notificationData;
 
   useEffect(() => {
-    if(requestStatus === 'success' || requestStatus === 'error') {
+    if (requestStatus === "success" || requestStatus === "error") {
       const timeoutId = setTimeout(() => {
         setRequestStatus(null);
         setStatusMessage(null);
       }, 2000);
 
       return () => {
-        clearTimeout(timeoutId)
-      }
+        clearTimeout(timeoutId);
+      };
     }
-  }, [requestStatus])
+  }, [requestStatus]);
 
   async function onSubmitHandler(e) {
     e.preventDefault();
     const email = emailInputRef.current.value;
     const name = nameInputRef.current.value;
     const message = messageInputRef.current.value;
-    // NEED TO ADD CLIENT SIDE VALIDATION
-    // if(!email)
     const requestObject = {
       email,
       name,
@@ -79,27 +78,39 @@ export default function ContactForm() {
   }
 
   return (
-    <section className={classes.contact}>
-      <h1>Contact Me</h1>
-      <form className={classes.form} onSubmit={onSubmitHandler}>
-        <div className={classes.controls}>
-          <div className={classes.control}>
-            <label htmlFor="email">Your Email:</label>
-            <input type="email" id="email" required ref={emailInputRef} />
+    <>
+      <section className={classes.contact}>
+        <h1>Contact Me</h1>
+        <form className={classes.form} onSubmit={onSubmitHandler}>
+          <div className={classes.controls}>
+            <div className={classes.control}>
+              <label htmlFor="email">Your Email:</label>
+              <input type="email" id="email" required ref={emailInputRef} />
+            </div>
+            <div className={classes.control}>
+              <label htmlFor="name">Your Name:</label>
+              <input type="text" id="name" required ref={nameInputRef} />
+            </div>
           </div>
           <div className={classes.control}>
-            <label htmlFor="name">Your Name:</label>
-            <input type="text" id="name" required ref={nameInputRef} />
+            <label htmlFor="message">Your Message:</label>
+            <textarea
+              id="message"
+              rows="5"
+              required
+              ref={messageInputRef}
+            ></textarea>
           </div>
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="message">Your Message:</label>
-          <textarea id="message" rows="5" required ref={messageInputRef}></textarea>
-        </div>
-        <div className={classes.actions}>
-          <button>Send Message</button>
-        </div>
-      </form>
+          <div className={classes.actions}>
+            <Button variant="dark" type="submit">
+              SUBMIT
+            </Button>
+          </div>
+        </form>
+      </section>
+      <section className={classes.contact}>
+        <ContactSocials />
+      </section>
       {notificationData && (
         <Notification
           status={notificationData.status}
@@ -107,8 +118,6 @@ export default function ContactForm() {
           message={notificationData.message}
         />
       )}
-    </section>
+    </>
   );
 }
-
-// NEED TO ADD LINKS TO MY GITHUB, MY PORTFOLIO AND LINKEDIN

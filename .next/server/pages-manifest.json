@@ -4,5 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/contact": "pages/contact.js",
-  "/api/newsletter-signup": "pages/api/newsletter-signup.js"
+  "/posts": "pages/posts.js"
 }

@@ -53,7 +53,7 @@ export default function NewsletterForm({fetchHandler}) {
           <Button variant="outline-dark" onClick={handleClose}>
             CLOSE
           </Button>
-          <Button variant="dark" onClick={handleSubmit}>
+          <Button variant="dark" onClick={handleSubmit} type="submit">
             SUBMIT
           </Button>
         </Modal.Footer>
