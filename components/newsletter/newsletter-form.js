@@ -13,9 +13,16 @@ export default function NewsletterForm({fetchHandler}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setShow(false);
-    // ADD CLIENT SIDE VALIDATION HERE (LIB?)
+    if(emailInputRef.current.value.length === 0) {
+      fetchHandler({invalidInput: 'Email input is empty...'});
+      return;
+    }
+    if(!emailInputRef.current.value.includes("@")) {
+      fetchHandler({invalidInput: 'Invalid format for email address...'});
+      return;
+    }
     fetchHandler(emailInputRef.current.value)
+    setShow(false);
   }
 
   return (
@@ -35,9 +42,9 @@ export default function NewsletterForm({fetchHandler}) {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
+                required
                 autoFocus
                 ref={emailInputRef}
-                required
               />
             </Form.Group>
           </Form>

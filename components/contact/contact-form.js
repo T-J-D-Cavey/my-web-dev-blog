@@ -31,6 +31,7 @@ export default function ContactForm() {
     const name = nameInputRef.current.value;
     const message = messageInputRef.current.value;
     // NEED TO ADD CLIENT SIDE VALIDATION
+    // if(!email)
     const requestObject = {
       email,
       name,
@@ -93,7 +94,7 @@ export default function ContactForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor="message">Your Message:</label>
-          <textarea id="message" rows="5" ref={messageInputRef}></textarea>
+          <textarea id="message" rows="5" required ref={messageInputRef}></textarea>
         </div>
         <div className={classes.actions}>
           <button>Send Message</button>

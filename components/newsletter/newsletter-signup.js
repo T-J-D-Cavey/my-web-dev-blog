@@ -25,7 +25,11 @@ export default function NewsletterSignup() {
 
   async function fetchHandler(userEmail) {
     setRequestStatus("pending");
-
+    if(userEmail.invalidInput) {
+      setRequestStatus("error");
+      setStatusMessage(userEmail.invalidInput);
+      return;
+    }
     const result = await sendData(
       { email: userEmail },
       "/api/newsletter-signup"
