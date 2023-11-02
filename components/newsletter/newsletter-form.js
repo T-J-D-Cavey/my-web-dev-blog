@@ -27,15 +27,15 @@ export default function NewsletterForm({fetchHandler}) {
 
   return (
     <div className={classes.container}>
-      <Button variant="outline-dark" onClick={handleShow} className={classes.grey500bg} size="sm">
+      <Button variant="dark" onClick={handleShow} size="sm" className={classes.button}>
         SIGN UP
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton className={classes.grey500bg}>
+        <Modal.Header closeButton className={classes.background}>
           <Modal.Title className={classes.grey800color}>EMAIL SUBSCRIPTION:</Modal.Title>
         </Modal.Header>
-        <Modal.Body className={classes.grey500bg}>
+        <Modal.Body className={classes.background}>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className={classes.grey800color}>Email address:</Form.Label>
@@ -49,11 +49,11 @@ export default function NewsletterForm({fetchHandler}) {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer className={classes.grey500bg}>
+        <Modal.Footer className={classes.background}>
           <Button variant="outline-dark" onClick={handleClose}>
             CLOSE
           </Button>
-          <Button variant="dark" onClick={handleSubmit} type="submit">
+          <Button variant="dark" onClick={handleSubmit} type="submit" className={classes.button}>
             SUBMIT
           </Button>
         </Modal.Footer>

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Notification from "../ui/notification";
 import { sendData } from "../../client/helpers/api-utils";
 import ContactSocials from "./contact-socials";
+import NewsletterSignup from "../newsletter/newsletter-signup";
 import classes from "./contact-form.module.css";
 
 export default function ContactForm() {
@@ -102,7 +103,7 @@ export default function ContactForm() {
             ></textarea>
           </div>
           <div className={classes.actions}>
-            <Button variant="dark" type="submit">
+            <Button variant="dark" type="submit" className={classes.button}>
               SUBMIT
             </Button>
           </div>
@@ -110,6 +111,9 @@ export default function ContactForm() {
       </section>
       <section className={classes.contact}>
         <ContactSocials />
+      </section>
+      <section className={classes.contact}>
+        <NewsletterSignup />
       </section>
       {notificationData && (
         <Notification

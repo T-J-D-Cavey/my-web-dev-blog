@@ -3,7 +3,7 @@
     background-image: linear-gradient(
       to bottom,
       var(--color-grey-900),
-      var(--color-grey-800)
+      var(--color-grey-700)
     );
     padding: var(--size-8) 0;
   }
@@ -28,12 +28,12 @@
   .hero h1 {
     font-size: var(--size-12);
     margin: var(--size-4) 0;
-    color: var(--color-grey-100);
+    color: var(--color-grey-50);
   }
   
   .hero p {
     font-size: var(--size-6);
-    color: var(--color-grey-100);
+    color: var(--color-grey-50);
     width: 90%;
     max-width: 40rem;
     margin: auto;

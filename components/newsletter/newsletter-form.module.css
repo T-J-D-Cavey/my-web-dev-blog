@@ -1,9 +1,21 @@
-.grey500bg {
-    background-color: var(--color-grey-500);
+.background {
+    background-color: var(--color-grey-100);
     border-color: var(--color-grey-800);
     font-family: 'Oswald', 'Roboto', sans-serif;
 }
 
 .grey800color {
     color: var(--color-grey-800);
+}
+
+.button {
+    font-family: 'Oswald', 'Roboto', sans-serif;
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-600);
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-500);
 }

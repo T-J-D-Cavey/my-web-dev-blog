@@ -42,10 +42,16 @@
   
   @media (min-width: 768px) {
     .header ul {
-      gap: 0.5rem;
+      gap: 2rem;
     }
   
     .header a {
-      font-size: var(--size-5);
+      font-size: var(--size-6);
+    }
+  }
+
+  @media screen and (max-width: 250px) {
+    .header ul {
+      flex-direction: column;
     }
   }

@@ -5,7 +5,7 @@
     width: 90%;
     max-width: 50rem;
     padding: var(--size-4);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
     font-size: var(--size-6);
   }
   
@@ -48,6 +48,18 @@
     margin-top: var(--size-4);
     text-align: right;
   }
+
+  .button {
+    font-family: 'Oswald', 'Roboto', sans-serif;
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-600);
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-500);
+}
   
   @media (min-width: 768px) {
     .contact h1 {
