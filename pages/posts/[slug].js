@@ -12,7 +12,7 @@ export default function PostDetailsPage(props) {
           content={`My blog post: ${props.post.title} - ${props.post.excerpt}`}
         />
       </Head>
-      <PostContent post={props.post} />;
+      <PostContent post={props.post} />
     </>
   );
 }

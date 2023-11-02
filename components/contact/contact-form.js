@@ -80,6 +80,7 @@ export default function ContactForm() {
 
   return (
     <>
+      <NewsletterSignup />
       <section className={classes.contact}>
         <h1>Contact Me</h1>
         <form className={classes.form} onSubmit={onSubmitHandler}>
@@ -111,9 +112,6 @@ export default function ContactForm() {
       </section>
       <section className={classes.contact}>
         <ContactSocials />
-      </section>
-      <section className={classes.contact}>
-        <NewsletterSignup />
       </section>
       {notificationData && (
         <Notification

@@ -10,5 +10,5 @@ export default function Document(props) {
         <div id="notifications"></div>
       </body>
     </Html>
-  );
+  )
 }

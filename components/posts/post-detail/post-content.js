@@ -1,14 +1,16 @@
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
-import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import PostHeader from "./post-header";
+import NewsletterSignup from "@/components/newsletter/newsletter-signup";
+import ContactSocials from "@/components/contact/contact-socials";
 import classes from "./post-content.module.css";
 
-SyntaxHighlighter.registerLanguage('js', js);
-SyntaxHighlighter.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage("js", js);
+SyntaxHighlighter.registerLanguage("css", css);
 
 export default function PostContent(props) {
   const post = props.post;
@@ -32,31 +34,40 @@ export default function PostContent(props) {
             />
           </div>
         );
-      };
+      }
       return <p>{paragraph.children}</p>;
     },
     code(code) {
-      const { className, children} = code;
-      const language = className.split('-')[1];
+      const { className, children } = code;
+      const language = className.split("-")[1];
 
       return (
-        <SyntaxHighlighter 
+        <SyntaxHighlighter
           style={atomDark}
           language={language}
           children={children}
         />
-      )
-
-    }
+      );
+    },
   };
   return (
-    <article className={classes.content}>
-      <PostHeader title={post.title} image={imagePath} />
-      <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
-    </article>
+    <>
+      <article className={classes.content}>
+        <PostHeader title={post.title} image={imagePath} />
+        <ReactMarkdown components={customRenderers}>
+          {post.content}
+        </ReactMarkdown>
+      </article>
+      <NewsletterSignup />
+      <article className={classes.footer}>
+        <div>
+
+        <ContactSocials />
+        </div>
+      </article>
+    </>
   );
 }
-// NEED TO UPDATE THE ALT TO BE DYNAMIC BASED ON THE TITLE
 
-// NEED TO ADD A COMMENTS SECTION UNDER EACH AND EVERY POST, WHICH DYNAMICALLY SHOWS ONLY THOSE COMMENTS FROM THE POST. 
+// NEED TO ADD A COMMENTS SECTION UNDER EACH AND EVERY POST, WHICH DYNAMICALLY SHOWS ONLY THOSE COMMENTS FROM THE POST.
 // THIS WILL NEED GET STATIC PATHS AND GET STATIC PROPS TO PASS THIS AS PROPS
