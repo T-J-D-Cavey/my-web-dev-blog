@@ -25,9 +25,10 @@ export default function PostContent(props) {
           <div className={classes.image}>
             <Image
               src={`/images/posts/${post.slug}/${image.properties.src}`}
-              alt="post picture"
+              alt={post.title}
               width={600}
               height={300}
+              className={classes.img}
             />
           </div>
         );

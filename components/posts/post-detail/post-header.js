@@ -6,7 +6,10 @@ export default function PostHeader(props) {
   return (
     <header className={classes.header}>
       <h1>{title}</h1>
-      <Image src={image} alt={title} width={200} height={150} />
+      <div className={classes.container}>
+
+      <Image src={image} alt={title} width={500} height={400} className={classes.img}/>
+      </div>
     </header>
   );
 }
