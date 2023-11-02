@@ -16,19 +16,17 @@ export default function PostItem(props) {
   const imagePath = `/images/posts/${slug}/${image}`;
   return (
     <li className={classes.post}>
-      <Link href={linkPath}>
-        <div className={classes.flex}>
-          <div className={classes.image}>
-            <Image src={imagePath} alt={title} fill={true} />
-          </div>
-          <div className={classes.conent}>
-            <h3>{title}</h3>
-            <time>{formatttedDate}</time>
-            <p>{excerpt}</p>
-          </div>
+      <Link href={linkPath} className={classes.a}>
+        <div className={classes.image}>
+          <Image src={imagePath} alt={title} fill={true} />
+        </div>
+        <div className={classes.content}>
+          <h3>{title}</h3>
+          <time>{formatttedDate}</time>
+          <p>{excerpt}</p>
         </div>
       </Link>
     </li>
   );
 }
-// NEED TO CONSIDER ALL IMAGE WIDTH AND HEIGHT DIMENSIONS GIVEN TO NEXT IMAGE COMPONENT TO MAKE SURE IMAGE QUALITY ISN'T AFFECTED
+
