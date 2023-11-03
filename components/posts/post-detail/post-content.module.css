@@ -57,3 +57,11 @@
   margin-top: var(--size-4);
   margin-bottom: var(--size-4);
 }
+
+.content a {
+  color: var(--color-primary-500);
+}
+
+.content a:hover {
+  color: var(--color-primary-600);
+}

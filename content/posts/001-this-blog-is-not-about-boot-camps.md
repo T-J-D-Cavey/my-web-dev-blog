@@ -14,7 +14,7 @@ It's a slightly provocative question. It's debatable. If you're a web developer 
 
 I'm on the fence about the debate, and perhaps there isn't really a debate worth talking about. One thing's for certain is that I didn't go to a boot camp. I'm a self-taught web developer. I'm unable to come off the fence on either side because I'm not yet a full-time developer.
 
-I don't think a boot camp is essential. I love web development, and I'll share some parts of my learning journey that I feel some people might find interesting. This will be from the perspective of someone who has largely learned the ropes on their own. 
+I don't think a boot camp is essential. I've learnt many aspects of web development. I love web development, and I'll share some parts of my learning journey that I feel some people might find interesting. This will be from the perspective of someone who has largely learned the ropes on their own. 
 
 Whether you're on the fence, a boot camper, or a self-taught pro, I hope you find some of what you read interesting. But first, let's take a step back to frame the debate.
 
