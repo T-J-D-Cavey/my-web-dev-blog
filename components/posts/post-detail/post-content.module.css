@@ -1,12 +1,13 @@
 .content {
   width: 95%;
   max-width: 60rem;
-  margin: var(--size-8) auto;
+  margin: var(--size-4) auto 0 auto;
   font-size: var(--size-5);
   line-height: var(--size-8);
   background-color: var(--color-grey-50);
   border-radius: 6px;
   padding: var(--size-4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 .content p {
@@ -51,6 +52,8 @@
 }
 
 .content h3,
-.content h2 {
+.content h2,
+.content p {
   margin-top: var(--size-4);
+  margin-bottom: var(--size-4);
 }
