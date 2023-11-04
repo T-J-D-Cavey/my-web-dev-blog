@@ -1,7 +1,7 @@
 ---
-title: 'This blog is not about coding boot camps'
+title: 'The Benefits of a Coding Boot Camp'
 date: '2023-11-01'
-image: this-blog-is-not-about-boot-camps-tags.jpg
+image: the-benefits-of-a-coding-boot-camp-tags.jpg
 excerpt: Is there a requirement to get a computer science degree or go to a bootcamp to get a job in web development?
 isFeatured: true
 ---

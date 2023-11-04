@@ -1,14 +1,14 @@
 ---
-title: 'A structured learning journey'
+title: 'Codecademy Career Path Advantages'
 date: '2023-11-02'
-image: codecademy-career-path.jpg
+image: codecademy-career-path-advantages-main.jpg
 excerpt: University courses are structured by the experts. It's a good appoach to outsource your learning roadmap.
 isFeatured: true
 ---
 
 I always remember that brown bear web page that looked like it was from the 90s.
 
-I took an HTML course provided by Codecademy, a popular online platform that offers interactive coding courses. The course introduced the core concepts of HTML and CSS, including a pretend web page all about bears.
+I took an HTML course provided by [Codecademy](https://www.codecademy.com/), a popular online platform that offers interactive coding courses. The course introduced the core concepts of HTML and CSS, including a pretend web page all about bears.
 
 I finished the course and moved on. JavaScript, along with everything else, remained an unknown unknown.
 
@@ -37,9 +37,41 @@ It had the obvious HTML, CSS, the fundamentals of web design, JavaScript was a s
 - Browser dev tools
 - Testing
 
-It covered JavaScript libraries: React and Redux. It discussed and got us practicing coding with data structures and algorithms. I was starting to miss how simple that bears web page was. Technical interview questions, CV writing, the list goes on.
+It covered JavaScript libraries: React and Redux. It discussed and got us practicing coding with data structures and algorithms. I was starting to miss how simple that bears web page was. Do you recognise this classic algorithm:
 
-It had an aim, and that aim was to make me employable as a front-end web developer.
+```js
+
+function sieveOfEratosthenes(limit) {
+  // Create an array to track prime numbers, initialize with true
+  const isPrime = Array(limit + 1).fill(true);
+
+  // 0 and 1 are not prime, so mark them as false
+  isPrime[0] = isPrime[1] = false;
+
+  // Start with the first prime number, 2
+  for (let number = 2; number * number <= limit; number++) {
+    // If isPrime[number] is still true, it's a prime number
+    if (isPrime[number]) {
+      // Mark all multiples of the prime number as not prime
+      for (let multiple = number * number; multiple <= limit; multiple += number) {
+        isPrime[multiple] = false;
+      }
+    }
+  }
+
+  // Collect the prime numbers into an array
+  const primes = [];
+  for (let number = 2; number <= limit; number++) {
+    if (isPrime[number]) {
+      primes.push(number);
+    }
+  }
+
+  return primes;
+}
+```
+
+It didn't stop at coding. Compotence and technical interview questions, CV writing, the list goes on. The course structure had an aim, and that aim was to make me employable as a front-end web developer.
 
 ## Learning and doing
 

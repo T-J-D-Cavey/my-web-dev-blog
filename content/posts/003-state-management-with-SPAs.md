@@ -1,69 +1,113 @@
 ---
-title: 'Global state, slices and other silly names'
+title: 'State Management with SPAs'
 date: '2023-11-03'
 image: state-management-with-SPAs-globe.jpg
-excerpt: tbc.
+excerpt: SPAs gained immense popularity in the mid-2010s, and this shift towards client-side state management led to innovative solutions.. 
 isFeatured: true
 ---
 
-Single-page-applications (SPA) became very popular in the mid teens. Having a way to manage their state on the client side was an interesting problem to solve. 
+In response to the increasing complexity and interactivity of modern web applications (web pages evolved into web apps, one might say), single-page applications (SPAs) helped avoid the need to fetch every new section of a site from the server, at the cost of a second or two.
 
-In response to the increasing complexity and interactiveness of modern web apps (web pages became web apps you might say), SPAs helped to avoid having to fetch every new section of a site from static served pages, at the cost of a second a two. 
+An SPA's server could respond to a request to their domain with a single, bare-bones HTML page and a very large bundled package of JavaScript. This script ran in the browser and created the Document Object Model (DOM) needed by the browser. With this setup, everything was readily available for rendering on the DOM, eliminating the need for further server requests. The content to be rendered depended on the state of the app.
 
-A server of an SPA could send one bare bones HTML page in respones to the request to their domain with a very large bundled package of JavaScript. This script ran on the browser and created the DOM that the browser needed. With this, everything was there and ready to be rendered on the DOM. Nothing needed to be fetched. What was rendered depended on the state of the app. 
-
-Angular was the first popular SPA JavaScript library. React and Vue followed. React seemed to be the most popular and was the library I learnt. For anyone unfamilier with what React is 'under the hood', I would would recommend [this talk by Tejas Kumar](https://youtu.be/f2mMOiCSj5c?si=Lrg_G-d06Zz3u9Sa).
+[Angular](https://angularjs.org/) was the first popular SPA JavaScript library, followed by [React](https://react.dev/) and [Vue](https://vuejs.org/). I chose to learn React. For those unfamiliar with what React is 'under the hood,' I would recommend [this talk by Tejas Kumar](https://youtu.be/f2mMOiCSj5c?si=Lrg_G-d06Zz3u9Sa).
 
 
+## Conditional Rendering
 
-<!-- ![A brown bear](brown-bear.jpg) -->
+With everything residing on the client-side, both local and global states largely determined what would be rendered. For example:
 
-## Codecademy Front-End Career Path
+```js
 
-They offered more than an HTML and CSS course. They offered 'career paths.' It's a fancy name, but it consisted of several modules on a range of subjects that someone would need to know for a career in that area. 'Back end' and 'Full stack' were the other options. I stuck with the bears.
+function MyComponent() {
+    const [someBooleanState, setSomeBoolean] = useState(false);
 
-The HTML and CSS course modules were included in the career path package. I was grateful for the chance to revise it. The platform even remembered my place in each module, which, as you might imagine, tended to be the final section of every module.
+    // Fetch some data and if successful, change the state
 
-## Would I recommend it?
+    if (!someBooleanState) {
+        return <div>Some loading spinner</div>
+    }
 
-Yes. It or something like it.
+    return <div>Main content</div>
+}
+```
 
-Looking back now, I'm grateful I had a structured learning journey. Being self-taught doesn't mean you have to build the curriculum. It just means you have to be honest when you mark your own work. The range of subjects and lessons was extensive. It was designed like how I imagine a coding boot camp would be, perhaps just a bit less intense and more steady.
+The snippet above is an example of a component's local state. This state is relevant only to this component and perhaps its children, but unrelated components don't need to know the state created here.
 
-## A comprehensive structure
+## Global State and State Management Libraries
 
-It had the obvious HTML, CSS, the fundamentals of web design, JavaScript was a significant section. It also included things that might not have been obvious to a novice to learn but which are part of a common front-end web developer's workflow:
+There will be many instances where distant components need access to the same state. A global state managed in a central location and provided to the root component via a Provider is an elegant way to grant app-wide access to state. Although I haven't used global state in this example, the notification banner a user receives when they sign up for my newsletter or send me a message would be a good use case.
 
-- VSCode
-- Git/Github
-- Browser dev tools
-- Testing
+React's createContext function and useContext hook are a common approach. My course introduced me to [Redux](https://redux.js.org/), a third-party library serving the same purpose. I'd like to show you a few examples of the @reduxjs/toolkit package, which most of my own projects have used.
 
-It covered JavaScript libraries: React and Redux. It discussed and got us practicing coding with data structures and algorithms. I was starting to miss how simple that bears web page was. Technical interview questions, CV writing, the list goes on.
+## A Redux Slice and a Redux Store
 
-It had an aim, and that aim was to make me employable as a front-end web developer.
+To manage state, you need a way to access and change that state. State and state changes should be consistent and lead to predictable outcomes that your app can rely on. For complex apps, it makes sense to separate bits of state into their own sections or slices. The 'createSlice' function allows us to do just that:
 
-## Learning and doing
+```js
 
-The Codecademy user interface is very impressive. It simulates a development environment integrated into your browsing window, a virtual browsing window alongside it, and informative text and animated step-by-step list instructions on the other side.
+const exampleSlice = createSlice({
+    name: 'example',
+    // Here we define our slice's default state:
+    initialState: {
+        someList: [],
+    },
+    // These are the functions that allow for predictable state changes:
+    reducers: {
+        changeSomeList: (state, action) => {
+            state.someList = action.payload;
+        },
+    // extraReducers would go here for asynchronous operations:
+    },
+})
+```
 
-It meant I had to read and then implement what I had read almost immediately, in tiny bite-sized pieces. Then, at the end of the module, there was a practice project (for paid members only). One last time to do what I had learned before moving on.
+You can define functions that provide access to this state and other functions that allow state changes:
 
-## Learning vs doing
+```js
 
-That might be my only criticism: the structure of the Codecademy career path curriculum didn't allow for much time to practice multiple new skills in a real-world scenario. I learned, I did, perhaps I did it again, and then I had to move on. All-encompassing projects were few and far between.
+const listSelector = (state) => {
+    return state.posts.list;
+}
+// Our list:
+const theList = useSelector(listSelector);
+console.log(theList);
 
-I'm beginning to appreciate that the learning never stops in tech; I also now appreciate the need to implement learnings after every new library, language, or framework. My year is now divided up into weeks or months of either learning or implementing what I've just learned.
+const { changeSomeList } = exampleSlice.actions;
 
-The amount of misunderstandings or forgotten details. My shortcomings are exposed trying to bring it together in a practical project. Exposed and then rectified.
+const dispatch = useDispatch();
+// Changing our list:
+dispatch(changeSomeList([...theList, 'a list item']));
 
-## Thanks to the bears
+const exampleReducer = exampleSlice.reducer;
+```
 
-I now look back at that first HTML course and the brown bears' web page with a sense of regret that it didn't inspire me to carry on learning. It took a promotion at work to make me revisit, and there's a sense that I'm a couple of years behind my new career path.
+Exporting these functions and importing them, along with their corresponding hooks, into your components allows app-wide state changes. Well... almost.
 
-I'm good at stopping those pointless feelings of regret and focusing on what I can control and change in the NOW. I recommend everyone do the same when possible.
+```js
+// This is the store that will host ALL state: 
+const store = configureStore({
+    reducer: {
+        example: exampleReducer
+    }
+   
+})
+// and is passed to the root component via a Provider:
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+);
+```
 
-Thanks [Codecademy](https://www.codecademy.com/).
+Once the configuration code is complete, it's easy and quick to access and change your app's state. However, be cautious of the way React schedules re-renders and state changes. If you change the state and rely on the new state within the same function, it's best to place that logic within a useEffect hook with that state as a dependency.
+
+## There's Always Another Way
+
+I've primarily used Redux and this toolkit package for larger apps where global state is advantageous. However, as mentioned, React's-out-the-box Context functions offer another, perhaps more intuitive way. I plan to use this approach more often, if for no other reason than it being a fresh approach.
+
+Regardless of the approach you choose, you'll be able to avoid 'prop drilling' and repetitive code with a well-implemented global state system.
 
 
 
