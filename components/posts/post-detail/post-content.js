@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import React from "react";
 import Image from "next/image";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
@@ -7,15 +8,17 @@ import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import PostHeader from "./post-header";
 import NewsletterSignup from "@/components/newsletter/newsletter-signup";
 import ContactSocials from "@/components/contact/contact-socials";
+import Link from "next/link";
 import classes from "./post-content.module.css";
 
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
 
+// Add in a photo alt meta data to each markdown file to access it for each picture
+
 export default function PostContent(props) {
   const post = props.post;
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
-
   const customRenderers = {
     p(paragraph) {
       const { node } = paragraph;
@@ -49,6 +52,14 @@ export default function PostContent(props) {
         />
       );
     },
+    a(anchor) {
+      const a = (
+        <a href={anchor.href} target="_blank">
+          {anchor.children}
+        </a>
+      );
+      return a;
+    },
   };
   return (
     <>
@@ -61,8 +72,7 @@ export default function PostContent(props) {
       <NewsletterSignup />
       <article className={classes.footer}>
         <div>
-
-        <ContactSocials />
+          <ContactSocials />
         </div>
       </article>
     </>

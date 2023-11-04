@@ -2,7 +2,7 @@
 title: 'A structured learning journey'
 date: '2023-11-02'
 image: codecademy-career-path.jpg
-excerpt: Computer science degrees and coding boot camps are structured. It's a good appoach.
+excerpt: University courses are structured by the experts. It's a good appoach to outsource your learning roadmap.
 isFeatured: true
 ---
 
