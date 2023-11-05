@@ -43,4 +43,9 @@ Photo by <a href="https://unsplash.com/@jacksonsophat?utm_content=creditCopyText
   
 
 Photo by <a href="https://unsplash.com/@nasa?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">NASA</a> on <a href="https://unsplash.com/photos/photo-of-outer-space-Q1p7bh3SHj8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+
+  Dunning–Kruger Effect attributed to <a href="https://commons.wikimedia.org/wiki/File:Dunning%E2%80%93Kruger_Effect_01.svg">忍者猫</a>, CC0, via Wikimedia Commons
+
+  Photo by <a href="https://unsplash.com/@gamell?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Joan Gamell</a> on <a href="https://unsplash.com/photos/black-flat-screen-computer-monitor-ZS67i1HLllo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
   

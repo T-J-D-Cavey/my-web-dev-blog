@@ -1,6 +1,6 @@
 ---
 title: 'State Management with SPAs'
-date: '2023-11-03'
+date: '2023-11-04'
 image: state-management-with-SPAs-globe.jpg
 excerpt: SPAs gained immense popularity in the mid-2010s, and this shift towards client-side state management led to innovative solutions.. 
 isFeatured: true
