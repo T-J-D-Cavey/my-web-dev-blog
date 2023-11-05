@@ -2,23 +2,25 @@
 title: 'The Benefits of a Coding Boot Camp'
 date: '2023-11-01'
 image: the-benefits-of-a-coding-boot-camp-tags.jpg
-excerpt: Is there a requirement to get a computer science degree or go to a bootcamp to get a job in web development?
+excerpt: Whilst getting a job as a web developer might not require attendance at a coding bootcamp, it's not bad option. 
 isFeatured: true
 ---
 
-This blog will discuss various web development topics, all from the perspective of a self-taught developer. It mentions very little about boot camps.
+This blog discusses various web development topics, all from the perspective of a self-taught developer. 
 
-So why is the H1 "**_Who needs boot camp_**"?
+```js
 
-It's a slightly provocative question. It's debatable. If you're a web developer or someone who aspires to be one, you'll probably sit firmly on one side of the debate or the other. Or you have a computer science degree and you think we're all clueless without one.
+console.log(Hello World!)
 
-I'm on the fence about the debate, and perhaps there isn't really a debate worth talking about. One thing's for certain is that I didn't go to a boot camp. I'm a self-taught web developer. I'm unable to come off the fence on either side because I'm not yet a full-time developer.
+```
 
-I don't think a boot camp is essential. I've learnt many aspects of web development. I love web development, and I'll share some parts of my learning journey that I feel some people might find interesting. This will be from the perspective of someone who has largely learned the ropes on their own. 
+There's an H1 on the homepage that reads "**_Who Needs Boot Camp?_**"
 
-Whether you're on the fence, a boot camper, or a self-taught pro, I hope you find some of what you read interesting. But first, let's take a step back to frame the debate.
+It's a slightly provocative question to have as a homepage title. But with only a few words to play with, I felt the question provides the context for much of this site's content. I didn't go to a coding boost camp, I have managed to learn lots of web development and I'll be reflecting on my approaches and learning journey throughout. 
 
-## What even is a boot camp?
+That doesn't mean I think a coding boot camp is a bad option though, so I wanted to outline my thoughts on what makes a coding bootcamp an enticing prospect to so many. 
+
+## What Even Is A Boot Camp?
 
 ![A camp fire surrounded by campers](camp-fire.jpg)
 
@@ -30,28 +32,45 @@ A popular AI language model, which is rapidly replacing Google as my go-to for m
 
 They can be quite expensive, sometimes over $20k, and you either cram them into intense evenings of learning, or you're not in work while in attendance. But lots of people swear by them. Why? There are a few likely reasons:
 
-### A learning structure designed for retention
+### A Learning Structure Designed For Retention
 
 **Tutorial hell** is when you spend an exorbitant amount of time watching videos and not practicing. When you get around to implementing things, the newly learned skills you thought you had vanish. 
 
 There's a way to learn, and there's a way to remember what you've learned. Try it, fail or succeed, try it more than once, and try it in a slightly new way. That's how to remember something new. Explaining something to someone, even if you've only just learned it, helps you retain that information.
 
-It's all easy to NOT do when learning by yourself. Boot camps are designed so that you retain the knowledge. 
+Both of those things are easy to NOT do when learning by yourself. Boot camps are designed so that you retain the knowledge. 
 
-### A community
+### A Community
 
-Your instructor(s) will know their stuff. Or they're hustlers. They will tell you the latest things to learn and why. Your fellow boot campers will have their own opinions. Both will be on hand to keep you motivated, keep you from being lazy, and shirking off the practice, and for help and advice.
+Your instructor(s) will know their stuff. Or they're hustlers. They will tell you the latest things to learn and why. Your fellow boot campers will have their own opinions. Both will be on hand to keep you motivated, keep you from being lazy by avoiding practicing, and will be there for help and advice.
 
 If you learn by yourself, a bunch of Discord server pals isn't quite the same. A support community is probably a big plus of boot camps.
 
-### Job entries
+### Job Entries
 
 How to apply, what to apply to, when to apply, how to prepare, and maybe even putting in a good word for you. I'm guessing a bit here, but helping you to land that first job is a service often cited in boot camp marketing.
 
-## Who knows and who cares
+## What About A Computer Science Degree?
 
-Perhaps a boot camp does make getting that first job easier. I don't really know how much I believe the course provider's confidence in employment following the course. Although if they offered a money-back guarantee, that would be convincing. 
+Being a software engineer is typically preceded by getting a degree in computer science. It's the conventional path into the industry. 
 
-In the absence of that, I'm going to carry on my self-taught web dev learning experiment and write a little bit about it along the way. Hope you can join...
+It's said that a computer science degree provides a strong foundation in the theoretical and practical aspects of computing. It equips graduates with a deep understanding of fundamental concepts, algorithms, and data structures that they can then apply to their web development roles (or at least the interview). 
+
+Additionally, computer science programs often cover a wide range of programming languages and technologies, once again making that interview easier. 
+
+So yes if you can afford it, if you're passionate about the subject, choosing a degree in computer science remains a great option. 
+
+## The Self-Taught Approach
+
+If you look at the number of web developer educators on YouTube, or their popularity in terms of views, comments, and the price some of these programmes charge, it's clear that self-learning web developers are many in number. 
+
+Access to lots of largely free learning material, to search engines, developer forums and most recently AI language models, has made this approach a perfectly good one... in theory. 
+
+You're somewhat on your own though. You need to be your own marker, your schedule setter, and your own coach when your confidence is down. 
+
+Learning ineffectively, wasting time on the wrong subjects, or acquiring incorrect knowledge can be pitfalls for self-taught developers.
+
+I'll be sharing my thoughts and reflections about this self-taught journey of mine. Hope you can join for some of it...
+
 
 
