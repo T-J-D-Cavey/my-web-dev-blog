@@ -8,13 +8,10 @@ import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import PostHeader from "./post-header";
 import NewsletterSignup from "@/components/newsletter/newsletter-signup";
 import ContactSocials from "@/components/contact/contact-socials";
-import Link from "next/link";
 import classes from "./post-content.module.css";
 
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
-
-// Add in a photo alt meta data to each markdown file to access it for each picture
 
 export default function PostContent(props) {
   const post = props.post;

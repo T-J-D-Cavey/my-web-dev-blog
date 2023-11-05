@@ -33,18 +33,19 @@ export default function NewsletterForm({fetchHandler}) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className={classes.background}>
-          <Modal.Title className={classes.grey800color}>EMAIL SUBSCRIPTION:</Modal.Title>
+          <Modal.Title className={classes.textColor}>EMAIL SUBSCRIPTION:</Modal.Title>
         </Modal.Header>
         <Modal.Body className={classes.background}>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className={classes.grey800color}>Email address:</Form.Label>
+              <Form.Label className={classes.textColor}>Email address:</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
                 required
                 autoFocus
                 ref={emailInputRef}
+                className={classes.form_input}
               />
             </Form.Group>
           </Form>

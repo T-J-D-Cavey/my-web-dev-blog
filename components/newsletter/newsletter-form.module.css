@@ -4,8 +4,12 @@
     font-family: 'Oswald', 'Roboto', sans-serif;
 }
 
-.grey800color {
+.textColor {
     color: var(--color-grey-800);
+}
+
+.form_input {
+    font-family: 'Roboto', sans-serif;
 }
 
 .button {

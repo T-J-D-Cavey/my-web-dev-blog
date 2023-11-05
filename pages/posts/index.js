@@ -1,4 +1,4 @@
-import { getAllPosts } from "../../client/helpers/posts-utils";
+import { getAllPosts } from "../../server/helpers/posts-utils";
 import AllPosts from "../../components/posts/all-posts";
 import NewsletterSignup from "@/components/newsletter/newsletter-signup";
 

@@ -7,7 +7,6 @@ export default function PostHeader(props) {
     <header className={classes.header}>
       <h1>{title}</h1>
       <div className={classes.container}>
-
       <Image src={image} alt={title} width={500} height={400} className={classes.img}/>
       </div>
     </header>
