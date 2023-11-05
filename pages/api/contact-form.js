@@ -15,19 +15,15 @@ export default async function handler(req, res) {
       return;
     }
 
-
     const sanitizedData = {
       email: validator.escape(email),
       name: validator.escape(name),
       message: validator.escape(message),
     };
 
-    // I NEED TO SET UP ENVIRONMENT VARIABLES AND SECRETS AND REPLACE SOME OF THE CODE IN THIS FILE WITH KEYS
-    // WHICH I WILL ASSIGN THE VALUES OF WHEN DEPLOYING. E.G MY DATABASE USERNAME, PASSWORD, DB NAME
+    const connectionString = `mongodb+srv://${process.env.MONGO_DB_USER_NAME}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_CLUSTER_NAME}.fabaugr.mongodb.net/${process.env.MONGO_DB_DATABASE_NAME}?retryWrites=true&w=majority`;
 
-    const client = await connectToDB(
-      `mongodb+srv://blog_admin_1:blog_admin_1@tjdcaveydb.fabaugr.mongodb.net/blog_dev?retryWrites=true&w=majority`
-    );
+    const client = await connectToDB(connectionString);
     if (!client) {
       res.status(500).json({ message: "Could not connect to database." });
       return;
@@ -47,15 +43,13 @@ export default async function handler(req, res) {
     client.close();
 
     res.status(201).json({
-      message:
-        "Your message and details have been received.",
+      message: "Your message and details have been received.",
     });
 
     return;
   } else {
     res.status(200).json({
-      message:
-        "An error with your request. Please try again.",
+      message: "An error with your request. Please try again.",
     });
     return;
   }
