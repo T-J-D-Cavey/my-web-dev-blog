@@ -6,8 +6,8 @@ import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import PostHeader from "./post-header";
-import NewsletterSignup from "@/components/newsletter/newsletter-signup";
-import ContactSocials from "@/components/contact/contact-socials";
+import NewsletterSignup from "../../newsletter/newsletter-signup";
+import ContactSocials from "../../contact/contact-socials";
 import classes from "./post-content.module.css";
 
 SyntaxHighlighter.registerLanguage("js", js);

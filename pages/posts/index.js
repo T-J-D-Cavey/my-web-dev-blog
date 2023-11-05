@@ -1,6 +1,6 @@
 import { getAllPosts } from "../../server/helpers/posts-utils";
 import AllPosts from "../../components/posts/all-posts";
-import NewsletterSignup from "@/components/newsletter/newsletter-signup";
+import NewsletterSignup from "../../components/newsletter/newsletter-signup";
 
 export default function AllPostsPage(props) {
   return (

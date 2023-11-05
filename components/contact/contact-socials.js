@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import classes from "./const-socials.module.css";
+import classes from "./contact-socials.module.css";
 
 export default function ContactSocials() {
   return (

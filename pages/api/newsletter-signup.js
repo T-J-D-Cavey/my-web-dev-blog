@@ -1,5 +1,5 @@
 import validator from "validator";
-import { connectToDB } from "@/server/helpers/data-base-utils";
+import { connectToDB } from "../../server/helpers/data-base-utils";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {

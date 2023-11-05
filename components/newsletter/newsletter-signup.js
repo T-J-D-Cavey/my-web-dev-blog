@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { sendData } from "@/client/helpers/api-utils";
+import { sendData } from "../../client/helpers/api-utils";
 import NewsletterForm from "./newsletter-form";
 import Notification from "../ui/notification";
 import classes from "./newsletter-signup.module.css";
