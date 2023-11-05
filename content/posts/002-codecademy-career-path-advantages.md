@@ -73,25 +73,23 @@ function sieveOfEratosthenes(limit) {
 
 It didn't stop at coding. Compotence and technical interview questions, CV writing, the list goes on. The course structure had an aim, and that aim was to make me employable as a front-end web developer.
 
-## Learning and doing
+## Learning and Applying
 
-The Codecademy user interface is very impressive. It simulates a development environment integrated into your browsing window, a virtual browsing window alongside it, and informative text and animated step-by-step list instructions on the other side.
+The Codecademy user interface is remarkably impressive. It recreates a development environment seamlessly within your web browser, complete with a virtual browser window alongside informative text and animated, step-by-step instructions. 
 
-It meant I had to read and then implement what I had read almost immediately, in tiny bite-sized pieces. Then, at the end of the module, there was a practice project (for paid members only). One last time to do what I had learned before moving on.
+This setup encouraged me to read and immediately apply what I'd learned in bite-sized portions. At the end of each module, there was a practice project (available to paid members only) – one last opportunity to reinforce my newfound knowledge before moving forward.
 
-## Learning vs doing
+## Balancing Learning and Application
 
-That might be my only criticism: the structure of the Codecademy career path curriculum didn't allow for much time to practice multiple new skills in a real-world scenario. I learned, I did, perhaps I did it again, and then I had to move on. All-encompassing projects were few and far between.
+Perhaps my primary critique lies in the Codecademy career path's structure, which limited opportunities for hands-on practice in real-world scenarios. I learned, I executed, and perhaps revisited, but the integration of new skills by building comprehensive projects was infrequent.
 
-I'm beginning to appreciate that the learning never stops in tech; I also now appreciate the need to implement learnings after every new library, language, or framework. My year is now divided up into weeks or months of either learning or implementing what I've just learned.
+I've come to appreciate the perpetual learning process in the tech world and the vital need to implement new skills after each encounter with a library, language, or framework. Now, my year is divided into weeks or months dedicated to learning and applying what I've newly acquired, an approach that has helped rectify misunderstandings and forgotten details through practical projects.
 
-The amount of misunderstandings or forgotten details. My shortcomings are exposed trying to bring it together in a practical project. Exposed and then rectified.
+## Grateful for the Journey
 
-## Thanks to the bears
+As I reflect on my initial HTML course and the humble brown bears' web page, I now view it with a sense of fondness and, perhaps, a tinge of regret that it didn't initially ignite my continuous learning journey. 
 
-I now look back at that first HTML course and the brown bears' web page with a sense of regret that it didn't inspire me to carry on learning. It took a promotion at work to make me revisit, and there's a sense that I'm a couple of years behind my new career path.
-
-I'm good at stopping those pointless feelings of regret and focusing on what I can control and change in the NOW. I recommend everyone do the same when possible.
+It took a work promotion to rekindle my interest, but I'm genuinely grateful that it did.
 
 Thanks [Codecademy](https://www.codecademy.com/).
 

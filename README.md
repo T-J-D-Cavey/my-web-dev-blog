@@ -1,6 +1,6 @@
 # My Web Dev Blog
 
-Site address: tbc
+Visit the site <a href="https://my-web-dev-blog.vercel.app/" target="_blank">here</a>.
 
 Welcome to my Blog! I've written about my self-taught journey into web development, sharing insights and reflections that might be of interest to someone who's doing the same.
 
