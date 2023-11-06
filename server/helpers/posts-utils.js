@@ -25,7 +25,11 @@ export function getAllPosts() {
   const allPosts = postFiles.map((file) => {
     return getPostData(file);
   });
-  const sortedPosts = allPosts.sort((a, b) => b.date - a.date);
+  const sortedPosts = allPosts.sort((a, b) => {
+    const first = a.date.replace(/-/g, "");
+    const second = b.date.replace(/-/g, "");
+    return second - first
+  });
   return sortedPosts;
 }
 
