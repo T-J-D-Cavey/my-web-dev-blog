@@ -56,6 +56,8 @@ Dunning–Kruger Effect attributed to <a href="https://commons.wikimedia.org/wik
 
 Photo by <a href="https://unsplash.com/@gamell?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Joan Gamell</a> on <a href="https://unsplash.com/photos/black-flat-screen-computer-monitor-ZS67i1HLllo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
+Photo by <a href="https://unsplash.com/@alvarordesign?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alvaro Reyes</a> on <a href="https://unsplash.com/photos/person-working-on-blue-and-white-paper-on-board-qWwpHwip31M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 
 ## Installation
 
