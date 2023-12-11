@@ -8,23 +8,25 @@ isFeatured: true
 
 Like a staircase, progress in a given technology happens with gradual optimisations and steep, transformative breakthroughs, argues Tim Goodwin in his 2018 book, [Digital Darwinism: Survival of the fittest in the age of business disruption](https://digitaldarwinism.shop/) part one. 
 
-It's a beautiful analogy and I think it can be applied to the development of any industry, technology or process. Web development is no exception. In fact software development even have a version control method that demonstrates this for me: vx.x.x. Think of the transformative breakthroughs as 'major versions'. v1, v2, v3. The gradual optimisations, as you might imagine, are the minor updates and patches. v2.5.4, v2.5.5, v2.5.6 and so on. 
+It's a beautiful analogy and I think it can be applied to the development of any industry, technology or process. Web development is no exception. In fact software development have a versioning method that demonstrates this for me: vx.x.x. Think of the transformative breakthroughs as 'major versions'. v1, v2, v3. The gradual optimisations, as you might imagine, are the minor updates and patches. v2.5.4, v2.5.5, v2.5.6 and so on. 
 
 ![Mobile phone showing Google Bard](chat-gpt-bard.jpg)
 
-Generative AI technology such as Open AI's Chat GPT was transformative for search engines and help seekers, and we've got years of optimisations of this technology ahead. 
+Generative AI technology such as Open AI's Chat GPT was transformative for the way people find answers online by changing the technology behind search engines. We've got years of optimisations of this technology ahead. 
 
-At a more macro level Tim Goodwin talks of new technologies and their transformative potential not being fully exploited and realised when discovered. They're bolted onto existing ways of working. As optimisations. It takes a bolder vision from a small and agile startup, to create transformations using new technology at its core. 
+At a more macro level Tim Goodwin talks of new technologies and their transformative potential not being fully exploited and realised when discovered. They're bolted onto existing ways of working, as optimisations. It takes a bolder vision from a small and agile startup, to create transformations using new technology at its core. 
 
 Uber doesn't own any taxis, Airbnb any hotels nor Facebook any media outlets. These companies transformed the industries they now dominate thanks to business models that were very different to their established competitors. 
 
 We still have desktops, files and folders on our devices. Perhaps this is another example of bolting onto the workflows of white collor clerks the as-of-now underutilised breakthroughs that personal computers might allow. 
 
+And then there's quantum computing...
+
 ## Room for UX improvements
 
-The user experience of some web sites certainly make me feel like we're in the infancy of this technology. Passwords hidden in a diary, account IDs on paper communications, online forms on mobile devices in general. We've got room for improvement. 
+The user experience of some web sites certainly make me feel like we're in the infancy of this technology. Passwords hidden in a diary and account IDs on paper communications strike me as two examples of how computers have augmented the analogue. We've got a crappy hybrid UX at this point in time. Room for improvement that can't wait for the major changes. 
 
-Can we start with these mobile phone forms? I've spent too much time filling in tiny input boxes on my phone, the screen a few inches from my face to make sure there's not a typo, only to find a vague error message and all of the input fields wiped blank after finding and pressing the 'Submit' button. Only reset the inputs when it's a successful submit please!
+I've spent too much time filling in tiny input boxes on my phone, the screen a few inches from my face to make sure there's not a typo, only to find a vague error message and all of the input fields wiped blank on submit. Please oh please only reset the inputs when it's a successful submit!
 
 I demo this on [the 'Contact me' form of my portfolio site](https://tim-cavey-portfolio.vercel.app/#contact), with: 
 
@@ -42,7 +44,7 @@ I demo this on [the 'Contact me' form of my portfolio site](https://tim-cavey-po
 
 ```
 
-I'm also making it clear to the user when the form is being submitted, when it's successful and when there's an error. Designed so that the error that gets sent from the server can reach the end user, in case it helps them to know the next best steps to take:
+I'm also making it clear to the user when the form is being submitted and loading, when it's successful and when there's an error. Designed so that the error that gets sent from the server can reach the end user, in case it helps them to know the next best steps to take:
 
 ```js
 
