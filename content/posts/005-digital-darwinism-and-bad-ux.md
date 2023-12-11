@@ -2,82 +2,65 @@
 title: 'Digital Darwinism and Bad UX'
 date: '2023-12-12'
 image: 005-digital-darwinism-and-bad-ux-cover.jpg
-excerpt: Tim Goodwin's Digital Darwinism writes of our current online ecosystem as something in its infancy, destined for fundamental change. Some terrible UX supports this.
+excerpt: Tim Goodwin's Digital Darwinism writes of our current online ecosystem as something in its infancy, destined for fundamental change. This is validated with terrible UX.
 isFeatured: true
 ---
 
-The Dunning Kruger effect is a cognitive bias in which individuals with low abilities or knowledge in a specific field tend to overestimate their competence, while those with higher abilities or expertise may do the opposite.  [There's a great summary on Ted-Ex's YouTube here](https://youtu.be/pOLmD_WVY-E?si=F7eY9F4_9lPUtqh-).
+Like a staircase, progress in a given technology happens with gradual optimisations and steep, transformative breakthroughs, argues Tim Goodwin in his 2018 book, [Digital Darwinism: Survival of the fittest in the age of business disruption](https://digitaldarwinism.shop/) part one. 
 
-It's the phenomenon where less skilled individuals often believe they are more skilled than they actually are, with heightened self-confidence but a lack of self-awareness, resulting in poor decision-making. This is why the process of learning to drive a vehicle is strictly guided and new starters to a company should have comprehensive inductions and ample support early on.
+It's a beautiful analogy and I think it can be applied to the development of any industry, technology or process. Web development is no exception. In fact software development even have a version control method that demonstrates this for me: vx.x.x. Think of the transformative breakthroughs as 'major versions'. v1, v2, v3. The gradual optimisations, as you might imagine, are the minor updates and patches. v2.5.4, v2.5.5, v2.5.6 and so on. 
 
-Here's the gist:
+![Mobile phone showing Google Bard](chat-gpt-bard.jpg)
 
-![The Dunning Kruger Effect](dunning-kruger-effect.svg)
+Generative AI technology such as Open AI's Chat GPT was transformative for search engines and help seekers, and we've got years of optimisations of this technology ahead. 
 
-To illustrate this self-perception roller coaster, I can relate it to my journey of learning JavaScript, specifically focusing on JavaScript functions.
+At a more macro level Tim Goodwin talks of new technologies and their transformative potential not being fully exploited and realised when discovered. They're bolted onto existing ways of working. As optimisations. It takes a bolder vision from a small and agile startup, to create transformations using new technology at its core. 
 
+Uber doesn't own any taxis, Airbnb any hotels nor Facebook any media outlets. These companies transformed the industries they now dominate thanks to business models that were very different to their established competitors. 
 
-## Functions: The Doers of JavaScript
+We still have desktops, files and folders on our devices. Perhaps this is another example of bolting onto the workflows of white collor clerks the as-of-now underutilised breakthroughs that personal computers might allow. 
 
-My initial exposure to JavaScript functions was through ES6 arrow function syntax. The "=>" symbol signified a function that performed actions – it seemed simple.
+## Room for UX improvements
 
-```js
+The user experience of some web sites certainly make me feel like we're in the infancy of this technology. Passwords hidden in a diary, account IDs on paper communications, online forms on mobile devices in general. We've got room for improvement. 
 
-const exampleFunction = (parameter) => {
-    console.log(parameter, this)
-}
+Can we start with these mobile phone forms? I've spent too much time filling in tiny input boxes on my phone, the screen a few inches from my face to make sure there's not a typo, only to find a vague error message and all of the input fields wiped blank after finding and pressing the 'Submit' button. Only reset the inputs when it's a successful submit please!
 
-```
-
-But there was more too it. Only after months of writing and reading JavaScript functions would that slowly reveal itself. Bit by bit, usually in the form of confusion and uncertainy. 
-
-For instance, I now understand that the exampleFunction above is a variable expression pointing to an anonymous arrow function. Another way to define such a function would be:
+I demo this on [the 'Contact me' form of my portfolio site](https://tim-cavey-portfolio.vercel.app/#contact), with: 
 
 ```js
 
-const exampleFunction = function (parameter) {
-    console.log(parameter, this)
-}
+  useEffect(() => {
+    if(submitStatus === "success") {
+      nameInputRef.current!.value = "";
+      emailInputRef.current!.value = "";
+      messageInputRef.current!.value = "";
+      newsletterInputRef.current!.checked = false;
+    }
+    return;
+  }, [submitStatus])
 
 ```
 
-This is an anonymous function declaration stored as a variable expression, with different context for 'this' within that function. Another example is a function declaration:
-
+I'm also making it clear to the user when the form is being submitted, when it's successful and when there's an error. Designed so that the error that gets sent from the server can reach the end user, in case it helps them to know the next best steps to take:
 
 ```js
 
-function exampleFunction (parameter) {
-    console.log(parameter, this)
-}
+  return (
+    <div className={classes.notificationContainer}>
+      <div className={classes.flexContainer}>
+        <h3>{notificationData.status} </h3>
+        {notificationData.status === "Sending" && <Spinner animation="grow" variant="light" />}
+        {notificationData.status === "Success!" && <div className={classes.iconContainer}><Image width={50} height={50} src={tickIcon} alt="Success"/></div>}
+        {notificationData.status === "Error" && <div className={classes.iconContainer}><Image width={50} height={50} src={crossIcon} alt="Error"/></div>}
+        {notificationData.message && <p>{notificationData.message}</p>}
+      </div>
+    </div>
+  );
 
 ```
 
-Not only does the context of 'this' differ from the initial arrow function, but this function name is hoisted at runtime, allowing the function declaration to be placed anywhere in the file, unlike the first two examples.
+Designing a good user experience for a web contact form isn't going to change the world. If it falls into any category of progress, it would be at the minor-changes and patch level. That's OK. 
 
-Yet another way to write an anonymous arrow function avoids the variable expression:
+There's only a little room for further improvement in web forms. Go after it with all you've got like it's survival of the fittest. Or take a step back and design a whole new way...
 
-```js
-
-const exampleFunction = function (parameter) {
-    return () => console.log(parameter, this)
-}
-
-```
-
-And so on...
-
-## The Unknown Unknowns
-
-When embarking on the journey of learning functions, it might have been the right approach to avoid diving into all the different methods and implications of writing functions comprehensively. Getting bogged down in implementation details can be counterproductive, diverting focus from grasping the core concept and its practical application.
-
-It's perfectly acceptable for a newcomer to a subject to be unaware of the extent of what they don't know. In fact, it might be a necessary part of the learning process, allowing learners to remain largely oblivious initially and gradually revealing the nuances of the subject over time.
-
-As the Dunning and Krugger effect shows, the learner responds to the realisation of how little they know and how much there is to learn with a sense of incompetence. The 'valley of despaire'. Perhaps learning structures should make this decline into the valley a gentle slope, to avoid any trips and tumbles that might bring the whole journey to an end. 
-
-## Embracing a Growth Mindset
-
-I firmly believe that adopting a 'growth mindset' can help individuals respond to drops in confidence that come with an awareness of incompetence. I find it empowering to acknowledge that I know very little about the complex world we live in, making each opportunity to learn and grow an exciting one. I try not to become defensive about my ignorance; instead, it makes it easier for me to acknowledge and celebrate small victories as I intentionally seize opportunities to enhance my understanding every day.
-
-A person with a growth mindset embraces ignorance as a stepping stone to knowledge, rather than shying away from it or confusing ignorance with enlightenment. 
-
-People with a growth mindset may not be immune to the Dunning Kruger effect, but their relationship between confidence and competence tends to be more linear, with fewer spikes and a shorter time horizon.

@@ -58,6 +58,8 @@ Photo by <a href="https://unsplash.com/@gamell?utm_content=creditCopyText&utm_me
 
 Photo by <a href="https://unsplash.com/@alvarordesign?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alvaro Reyes</a> on <a href="https://unsplash.com/photos/person-working-on-blue-and-white-paper-on-board-qWwpHwip31M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
+Photo by <a href="https://unsplash.com/@iammottakin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mojahid Mottakin</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-logo-on-a-cell-phone-iN_edw1iHII?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 
 ## Installation
 
