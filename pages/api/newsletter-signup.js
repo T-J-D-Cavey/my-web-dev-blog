@@ -22,6 +22,18 @@ export default async function handler(req, res) {
 
   const db = client.db();
 
+  // new code:
+  const existingEmail = await db.collection("newsletter-emails").findOne(emailObject);
+  if (existingEmail) {
+    client.close();
+    console.log('this test works')
+    res.status(200).json({
+      message: "Email address already exists in the database.",
+    });
+    return;
+  }
+  // end of new code
+
   let result;
   try {
     result = await db.collection("newsletter-emails").insertOne(emailObject);
