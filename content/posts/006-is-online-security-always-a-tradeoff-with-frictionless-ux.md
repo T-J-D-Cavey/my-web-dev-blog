@@ -21,20 +21,5 @@ Here is each step I have to take every time I want to log in to my [Virgin Money
 
 
 
-```js
-
-  return (
-    <div className={classes.notificationContainer}>
-      <div className={classes.flexContainer}>
-        <h3>{notificationData.status} </h3>
-        {notificationData.status === "Sending" && <Spinner animation="grow" variant="light" />}
-        {notificationData.status === "Success!" && <div className={classes.iconContainer}><Image width={50} height={50} src={tickIcon} alt="Success"/></div>}
-        {notificationData.status === "Error" && <div className={classes.iconContainer}><Image width={50} height={50} src={crossIcon} alt="Error"/></div>}
-        {notificationData.message && <p>{notificationData.message}</p>}
-      </div>
-    </div>
-  );
-
-```
 
 Designing a good 
