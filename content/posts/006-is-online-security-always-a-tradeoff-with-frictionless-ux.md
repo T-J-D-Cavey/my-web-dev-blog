@@ -3,15 +3,26 @@ title: 'Is online security always a tradeoff with frictionless UX?'
 date: '2024-08-18'
 image: '006-is-online-security-always-a-tradeoff-with-frictionless-ux.jpg'
 # to be written:
-excerpt: to be written!!!.
+excerpt: "My recent online bank account was a pain to access every time I wanted to log in. It was probably dificult to hack. Should I be more grateful?"
 isFeatured: true
 ---
 
-Like a staircase, progress in a given technology happens with gradual optimisations and steep, transformative breakthroughs, argues Tim Goodwin in his 2018 book, [Digital Darwinism: Survival of the fittest in the age of business disruption](https://digitaldarwinism.shop/) part one. 
+I'm not an expert, or even that interested in cyber security. But I know it's important. 
+
+I have read articles documenting the ongoing, changing threats that exists in our online and digital worlds. Some state sponsered, some not. All of it ugly and filled with malice. Or ruthlessly focused on making money no matter what the impact. Either way, buckle up and be ready because they're coming for all of us sooner or later. 
+
+With this in mind, companies of all shapes and sizes know that they have a responsibility to design a safe and secure system for their business and for their customers. Single-sign-on (SSO) or multi-factor-authentication flows aim at making sure the person logging in is actually you. SSO also makes logging in easy on devices where you're signed in to that provider. That is an example of a win win scenrio for security and UX. We need more of those. 
+
+![Angry with something showing on their laptop screen](angry-with-laptop.jpg)
+
+## More room for UX improvements
+
+Let me demonstrate my point
+Like a staircase, progress in a given technology happens with gradual optimisations and steep, transformative breakthroughs, argues Tim Goodwin in his 2018 book, [Digital Darwinism: Survival of the fittest in the age of business disruption](https://uk.virginmoney.com/) part one. 
 
 It's a beautiful analogy and I think it can be applied to the development of any industry, technology or process. Web development is no exception. In fact software development have a versioning method that demonstrates this for me: vx.x.x. Think of the transformative breakthroughs as 'major versions'. v1, v2, v3. The gradual optimisations, as you might imagine, are the minor updates and patches. v2.5.4, v2.5.5, v2.5.6 and so on. 
 
-![Mobile phone showing Google Bard](chat-gpt-bard.jpg)
+
 
 Generative AI technology such as Open AI's Chat GPT was transformative for the way people find answers online by changing the technology behind search engines. We've got years of optimisations of this technology ahead. 
 
@@ -23,7 +34,7 @@ We still have desktops, files and folders on our devices. Perhaps this is anothe
 
 And then there's quantum computing...
 
-## Room for UX improvements
+
 
 The user experience of some web sites certainly make me feel like we're in the infancy of this technology. Passwords hidden in a diary and account IDs on paper communications strike me as two examples of how computers have augmented the analogue. We've got a crappy hybrid UX at this point in time. Room for improvement that can't wait for the major changes. 
 
