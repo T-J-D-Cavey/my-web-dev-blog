@@ -1,8 +1,9 @@
 ---
-title: 'Digital Darwinism and Bad UX'
-date: '2023-12-12'
-image: 005-digital-darwinism-and-bad-ux-cover.jpg
-excerpt: Tim Goodwin's Digital Darwinism writes of our current online ecosystem as something in its infancy, destined for fundamental change. This is validated with terrible UX.
+title: 'Is online security always a tradeoff with frictionless UX?'
+date: '2024-08-18'
+image: '006-is-online-security-always-a-tradeoff-with-frictionless-ux.jpg'
+# to be written:
+excerpt: to be written!!!.
 isFeatured: true
 ---
 
