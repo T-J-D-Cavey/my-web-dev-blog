@@ -7,11 +7,11 @@ excerpt: "My recent online bank account was a pain to access every time I wanted
 isFeatured: true
 ---
 
-I'm not an expert, or even that interested in cyber security. I know enough to know it's important. 
+I'm not an expert, or even that interested in cybersecurity. I know enough to know it's important. 
 
-I've read articles documenting the ongoing, changing threats that exists in our online and digital worlds. Some state sponsered, some not. All of it ugly and filled with malice. Or ruthlessly focused on making money no matter what the impact is on the victims. Either way, buckle up and be ready because they're coming for all of us sooner or later. 
+I've read articles documenting the ongoing, changing threats that exist in our online and digital worlds. Some state-sponsered, some not. All of it is ugly and filled with malice, or ruthlessly focused on making money, no matter the impact on victims. Either way, buckle up and be ready because they're coming for all of us sooner or later. 
 
-With this in mind, companies of all shapes and sizes know that they have a responsibility to design a safe and secure system for their business and for their customers. Single-sign-on (SSO) or multi-factor-authentication flows aim at making sure the person logging in is actually you. SSO also makes logging in easy on devices where you're signed in to that provider. That is an example of a win win scenrio for security and the user experience (UX). We need more of those. 
+With this in mind, companies of all shapes and sizes know that they have a responsibility to design a safe and secure system for their business and for their customers. Single sign-on (SSO) or multi-factor authentication (MFA) flows aim at making sure the person logging in is actually you. SSO also makes logging in easy on devices where you're signed in to that provider. That is an example of a win-win scenario for security and the user experience (UX). We need more of those. 
 
 ![Angry with something showing on their laptop screen](angry-with-laptop.jpg)
 
@@ -21,7 +21,15 @@ Win win scenarios aren't always available though. [My previous post](005-digital
 
 Here is each step I have to take every time I want to log in to my [Virgin Money Cash ISA (individual savings account)](https://uk.virginmoney.com/): 
 
+(to be written)
 
+First off, if I know my password, why can't I submit it in its entirety? How is it any more secure to ask me to figure out the 8th, 17th and 21st character of my password? Who came up with that?! Secondly I find it peculiar that I have to work out which account I have in the eyes of Virgin. They have my details on their system. Why can't they work it out when I log in? What is the security advantage of having a cap on the number of characters allowed in my password? 
 
+Should Virgin Money improve my experience, or should I adjust my expectations and sense of perspective? After all, the consequences of a breach in security, and a hostile actor gaining access to my bank account far outweighs a clunky logging in experience. 
 
-Designing a good 
+SSO and MFA are applications of technology for the purpose of protection. Are there others we can consider? My smart phone has a camera and a fingerprint sensor. Why don't I get given the choice to 'Log in on mobile device' and have these options to prove my identity? 
+
+Perhaps there are flaws and risks to this approach that I am unaware of. Either way, I think designers need to have more robust conversations with their security and engineering colleagues when designing secure user journeys. It's in the interest of the company and of the end user. 
+
+I ended up leaving Virgin Money for a [Chip account](https://getchip.uk). Their app is excellent. Perhaps customers like me, voting with our feet, will be the motivating force that compels companies lagging behind on technology (usually legacy incumbents) to change their ways...
+
