@@ -7,15 +7,17 @@ excerpt: "My recent online bank account was a pain to access every time I wanted
 isFeatured: true
 ---
 
-I'm not an expert, or even that interested in cyber security. But I know it's important. 
+I'm not an expert, or even that interested in cyber security. I know enough to know it's important. 
 
-I have read articles documenting the ongoing, changing threats that exists in our online and digital worlds. Some state sponsered, some not. All of it ugly and filled with malice. Or ruthlessly focused on making money no matter what the impact. Either way, buckle up and be ready because they're coming for all of us sooner or later. 
+I've read articles documenting the ongoing, changing threats that exists in our online and digital worlds. Some state sponsered, some not. All of it ugly and filled with malice. Or ruthlessly focused on making money no matter what the impact is on the victims. Either way, buckle up and be ready because they're coming for all of us sooner or later. 
 
-With this in mind, companies of all shapes and sizes know that they have a responsibility to design a safe and secure system for their business and for their customers. Single-sign-on (SSO) or multi-factor-authentication flows aim at making sure the person logging in is actually you. SSO also makes logging in easy on devices where you're signed in to that provider. That is an example of a win win scenrio for security and UX. We need more of those. 
+With this in mind, companies of all shapes and sizes know that they have a responsibility to design a safe and secure system for their business and for their customers. Single-sign-on (SSO) or multi-factor-authentication flows aim at making sure the person logging in is actually you. SSO also makes logging in easy on devices where you're signed in to that provider. That is an example of a win win scenrio for security and the user experience (UX). We need more of those. 
 
 ![Angry with something showing on their laptop screen](angry-with-laptop.jpg)
 
 ## More room for UX improvements
+
+Win win scenarios aren't always available though. My previous post outlined how I believe the presence of poorly designed digital experiences are an indication of the amount of progress we should expect (or hope for) in the coming years, as the technology evolves and matures. I have another example to share that relates to online security:
 
 Here is each step I have to take every time I want to log in to my [Virgin Money Cash ISA (individual savings account)](https://uk.virginmoney.com/): 
 
