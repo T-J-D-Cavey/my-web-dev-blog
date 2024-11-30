@@ -17,7 +17,7 @@ With this in mind, companies of all shapes and sizes know that they have a respo
 
 ## More room for UX improvements
 
-Win win scenarios aren't always available though. My previous post outlined how I believe the presence of poorly designed digital experiences are an indication of the amount of progress we should expect (or hope for) in the coming years, as the technology evolves and matures. I have another example to share that relates to online security:
+Win win scenarios aren't always available though. [My previous post](005-digital-darwinism-and-bad-ux) outlined how I believe the presence of poorly designed digital experiences are an indication of the amount of progress we should expect (or hope for) in the coming years, as the technology evolves and matures. I have another example to share that relates to online security:
 
 Here is each step I have to take every time I want to log in to my [Virgin Money Cash ISA (individual savings account)](https://uk.virginmoney.com/): 
 
