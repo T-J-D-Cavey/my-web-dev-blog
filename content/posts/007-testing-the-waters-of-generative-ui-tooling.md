@@ -1,42 +1,77 @@
 ---
-title: 'Is online security always a tradeoff with frictionless UX?'
-date: '2024-11-30'
-image: '006-is-online-security-always-a-tradeoff-with-frictionless-ux.jpg'
-excerpt: "My recent online bank account was a pain to access every time I wanted to log in. It was probably dificult to hack. Should I be more grateful?"
+title: 'Testing the Waters of Generative UI Tooling'
+date: '2025-10-21'
+image: 007-testing-the-waters-of-generative-ui-tooling.png
+excerpt: "My two-week journey using Vercel v0, Gemini, and several AI design tools to create a functional Next.js game — and why coders aren't obsolete yet."
 isFeatured: true
 ---
 
-I'm not an expert, or even that interested in cybersecurity. I know enough to know it's important. 
+## The Mission: Why AI?
 
-I've read articles documenting the ongoing, changing threats that exist in our online and digital worlds. Some state-sponsered, some not. All of it is ugly and filled with malice, or ruthlessly focused on making money, no matter the impact on victims. Either way, buckle up and be ready because they're coming for all of us sooner or later. 
-
-With this in mind, companies of all shapes and sizes know that they have a responsibility to design a safe and secure system for their business and for their customers. Single sign-on (SSO) or multi-factor authentication (MFA) flows aim at making sure the person logging in is actually you. SSO also makes logging in easy on devices where you're signed in to that provider. That is an example of a win-win scenario for security and the user experience (UX). We need more of those. 
+The mission was straightforward: build a fun, visually engaging web version of Battleships while maximizing the use of free AI tools. As a self-taught, hobbyist developer, I aimed to put modern Large Language Models (LLMs) and popular generative design platforms to the test, exploring their true capabilities beyond the advertisements.
 
 ![Angry with something showing on their laptop screen](angry-with-laptop.jpg)
 
-## More room for UX improvements
+## The Tech Stack & Gameplay
 
-Win win scenarios aren't always available though. [My previous post](005-digital-darwinism-and-bad-ux) outlined how I believe the presence of poorly designed digital experiences are an indication of the amount of progress we should expect (or hope for) in the coming years, as the technology evolves and matures. I have another example to share that relates to online security:
+I chose a robust, yet straightforward front end approach for reliable deployment:
 
-Here is each step I have to take every time I want to log in to my [Virgin Money Cash ISA (individual savings account)](https://uk.virginmoney.com/): 
+- Frontend: Next.js (React), Typescript
+- Styling: Tailwind CSS 
+- Deployment: Vercel
 
-1) Navigate to the Virgin Money website.
-2) Click the 'Sign In' button.
-3) Choose a financial product from the menu, such as 'Savings' or 'Current Accounts.'
-4) Select the appropriate radio button that corresponds to the starting digits of your sort code.
-5) Enter your Customer ID.
-6) Enter the specified characters (e.g., the 8th, 17th, and 21st characters) of your 24-character password.
-7) Check your phone for the authentication code sent via SMS and enter it.
+The gameplay was intentionally simplified: 1 Battleship (5 squares, 4 hits to sink) and 4 Destroyers (1 square, 1 hit to sink). Crucially, the core game mechanics—ship placement, alternating turns, and victory conditions—had to be perfectly coded and work flawlessly.
 
-First off, if I know my password, why can't I submit it in its entirety? How is it any more secure to ask me to figure out the 8th, 17th and 21st character of my password? Who came up with that?! Secondly I find it peculiar that I have to work out which financial product I have in the eyes of Virgin. They have my details on their system. Why can't they work it out when I log in? What is the security advantage of having a cap on the number of characters allowed in my password? 
+## The Great AI Tool Showdown
 
-Should Virgin Money improve my experience, or should I adjust my expectations and sense of perspective? After all, the consequences of a breach in security, and a hostile actor gaining access to my bank account far outweighs a clunky logging in experience. 
+My experience with the current generation of AI design tools was mixed but I never paid. Maybe the experience on offer would be dramatically different if I was a paying customer. For the free versions, many promised automated UI generation but quickly fell short of delivering exportable, usable, and maintainable code. I divided the field into three categories:
 
-SSO and MFA are applications of technology for the purpose of protection. Are there others we can consider? My smart phone has a camera and a fingerprint sensor. Why don't I get given the choice to 'Log in on mobile device' and have these options to prove my identity? 
+### A. The Disappointments (Uizard, Visily, Banani, Stitch)
 
-Perhaps there are flaws and risks to this approach that I am unaware of. Either way, I think designers need to have more robust conversations with their security and engineering colleagues when designing secure user journeys. It's in the interest of the company and of the end user. 
+This group was immediately frustrating. [Uizard](https://uizard.io/) and [Visily](https://www.visily.ai/) both had poor user experiences; Uizard hid its paywall, and Visily's chat functionality was broken. [Banani](https://www.banani.co/) provided designs that simply didn't match the prompt requirements. [Stitch with Google](https://stitch.withgoogle.com/) was quick, but only exported raw HTML, which was incompatible with my React stack. The takeaway here was simple: the free version of these tools are not ready for complex, functional application generation.
 
-![Mobile phone with Chip app on the screen](chip-savings-account.png)
+### B. The Paywalls and Black Boxes (UXMagic, Loveable, Bolt)
 
-I ended up leaving Virgin Money for a [Chip account](https://getchip.uk). Their app is excellent. Perhaps customers like me, voting with our feet, will be the motivating force that compels companies lagging behind on technology (usually legacy incumbents) to change their ways...
+This group showed promise but hit immediate limitations.
+
+- [UXMagic](https://uxmagic.ai/) and Loveable generated functional previews but obscured the code behind paywalls or strict usage limits. Loveable's functionality was impressive, but its output was clearly aimed at non-coders - a "no-code" black box that was unsuitable for self-hosting or professional maintenance.
+
+- [Bolt](https://bolt.new/) required a chaotic signup and login process but eventually generated a seemingly full-stack app. However, its use of React/TypeScript and a separate database meant it would require significant re-writing to host on Vercel, not a simple copy-paste job.
+
+These tools proved that while AI can create complex apps, they aren't designed to give the code back to the developer easily.
+
+### C. The Clear Winner: Vercel v0
+
+[Vercel v0](https://v0.app/) was the unequivocal winner.
+
+- It produced the best designs and the best functionality.
+- Its code output was modern best-practice Next.js, React, and TypeScript.
+- It offered direct GitHub integration, allowing me to easily manage versions and add custom files.
+
+V0 built 95% of the initial game structure and logic straight up, which was incredibly impressive. However, the experience was still a learning curve:
+
+- Prompt Limits: I frequently used up my daily allowance. This wasn't due to simple mistakes but because the AI needed several attempts to fix bugs, highlighting a lack of internal testing of its own generated code.
+- Agentic Changes: When I asked the AI to implement state preservation, it did so perfectly, but was willing to make sweeping, structural changes that wiped out my previous manual fixes. The lesson here is paramount: Get the tool to build the app end-to-end, then immediately take the reins yourself to finish the project without further agentic changes.
+
+### The Developer's Reality: Debugging and Maintenance
+
+V0 successfully generated the fantastic structure (the crucial "80%"), but the AI did not create a perfect application. My biggest challenges quickly shifted from coding to fixing code.
+
+#### The Crucial Role of LLMs (Gemini)
+
+Once my V0 prompts ran out, Google Gemini (Pro, thanks to my employer) became my effective co-pilot:
+
+- Pinpoint Debugging: Gemini proved effective at taking complex errors, narrowing down the issue's location, and pointing out logic flaws or necessary code improvements
+- Code Explanation: Any generated code I copied over, Gemini was able to explain clearly, detailing its purpose and underlying logic. This helped me deeply understand the codebase and confidently identify necessary improvements.
+- Asset Creation: Gemini assisted in generating and refining the required image assets for sea tiles and ships, though—similar to V0—refining the output required persistence and careful prompting. A final shout-out goes to remove.bg and GIMP for their excellent, free image editing tools that made the assets web-ready.
+
+### Overall Verdict: The 80% Rule
+
+My experience tells me that that AI design tools are not replacing developers yet, but they are dramatically accelerating development:
+
+- AI gets you 80% of the way there. V0 provided the foundation, the styling, and the best-practice file structure in about an hour. Without it, the project would have taken weeks of UI/UX design and boilerplate coding.
+- A coder is still required. The remaining 20% - the bug fixing, the subtle CSS improvement, the custom game logic, and debugging conflicts - required over 30 hours of focused manual work. The final solution often involved using an LLM (Gemini) to guide a human coder (me) to the solution.
+- This was the most complex app I’ve ever built. The final product is robust and enjoyable, something I would not have attempted two weeks ago.
+
+The total experience was incredibly positive, and I am very impressed with the final application I built. Gemini also wrote this blog post completing the journey from inception to documentation. Plus I didn’t spend a penny! 
 
