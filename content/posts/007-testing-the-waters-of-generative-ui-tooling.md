@@ -10,7 +10,9 @@ isFeatured: true
 
 The mission was straightforward: build a fun, visually engaging web version of Battleships while maximizing the use of free AI tools. As a self-taught, hobbyist developer, I aimed to put modern Large Language Models (LLMs) and popular generative design platforms to the test, exploring their true capabilities beyond the advertisements.
 
-![Angry with something showing on their laptop screen](angry-with-laptop.jpg)
+![A battle scene from an existing Battleships game](battleships-online-existing-game.png)
+
+The mission was not to build something to be popular or to attract players. There are already a great free versions of Battleships you can play, such as [this one here](https://www.calculators.org/games/battleship/). 
 
 ## The Tech Stack & Gameplay
 
@@ -20,6 +22,8 @@ I chose a robust, yet straightforward front end approach for reliable deployment
 - Styling: Tailwind CSS 
 - Deployment: Vercel
 
+![landing page of Battleships video game](final-landing-page-screenshot.png)
+
 The gameplay was intentionally simplified: 1 Battleship (5 squares, 4 hits to sink) and 4 Destroyers (1 square, 1 hit to sink). Crucially, the core game mechanics—ship placement, alternating turns, and victory conditions—had to be perfectly coded and work flawlessly.
 
 ## The Great AI Tool Showdown
@@ -28,15 +32,23 @@ My experience with the current generation of AI design tools was mixed but I nev
 
 ### A. The Disappointments (Uizard, Visily, Banani, Stitch)
 
+![The user interface of a battleships game](unknown-game-ui.jpeg)
+
 This group was immediately frustrating. [Uizard](https://uizard.io/) and [Visily](https://www.visily.ai/) both had poor user experiences; Uizard hid its paywall, and Visily's chat functionality was broken. [Banani](https://www.banani.co/) provided designs that simply didn't match the prompt requirements. [Stitch with Google](https://stitch.withgoogle.com/) was quick, but only exported raw HTML, which was incompatible with my React stack. The takeaway here was simple: the free version of these tools are not ready for complex, functional application generation.
 
 ### B. The Paywalls and Black Boxes (UXMagic, Loveable, Bolt)
 
 This group showed promise but hit immediate limitations.
 
-- [UXMagic](https://uxmagic.ai/) and Loveable generated functional previews but obscured the code behind paywalls or strict usage limits. Loveable's functionality was impressive, but its output was clearly aimed at non-coders - a "no-code" black box that was unsuitable for self-hosting or professional maintenance.
+![UX Magic battleships game design](uxmagic-designs.png)
 
-- [Bolt](https://bolt.new/) required a chaotic signup and login process but eventually generated a seemingly full-stack app. However, its use of React/TypeScript and a separate database meant it would require significant re-writing to host on Vercel, not a simple copy-paste job.
+[UXMagic](https://uxmagic.ai/) and Loveable generated functional previews but obscured the code behind paywalls or strict usage limits. Loveable's functionality was impressive, but its output was clearly aimed at non-coders - a "no-code" black box that was unsuitable for self-hosting or professional maintenance.
+
+![Bolt battleships game design](bolt-designs.png)
+
+[Bolt](https://bolt.new/) required a chaotic signup and login process but eventually generated a seemingly full-stack app. However, its use of React/TypeScript and a separate database meant it would require significant re-writing to host on Vercel, not a simple copy-paste job.
+
+![Loveable battleships game design](loveble-designs.png)
 
 These tools proved that while AI can create complex apps, they aren't designed to give the code back to the developer easily.
 
@@ -74,4 +86,10 @@ My experience tells me that that AI design tools are not replacing developers ye
 - This was the most complex app I’ve ever built. The final product is robust and enjoyable, something I would not have attempted two weeks ago.
 
 The total experience was incredibly positive, and I am very impressed with the final application I built. Gemini also wrote this blog post completing the journey from inception to documentation. Plus I didn’t spend a penny! 
+
+ps I loved most of the landing page designs:
+
+![Unsued landing page with battleship guns](unused-landing-page-1.png) 
+
+![Another unused landing page design from the control room of a ship](unused-landing-page-1.png) 
 
