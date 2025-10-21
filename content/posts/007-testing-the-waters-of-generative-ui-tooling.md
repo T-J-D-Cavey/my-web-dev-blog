@@ -22,7 +22,7 @@ I chose a robust, yet straightforward front end approach for reliable deployment
 - Styling: Tailwind CSS 
 - Deployment: Vercel
 
-![landing page of Battleships video game](final-landing-page-screenshot.png)
+![File structure and code of the project](v0-code-screenshot.png)
 
 The gameplay was intentionally simplified: 1 Battleship (5 squares, 4 hits to sink) and 4 Destroyers (1 square, 1 hit to sink). Crucially, the core game mechanics—ship placement, alternating turns, and victory conditions—had to be perfectly coded and work flawlessly.
 
@@ -44,7 +44,7 @@ This group showed promise but hit immediate limitations.
 
 [UXMagic](https://uxmagic.ai/) and Loveable generated functional previews but obscured the code behind paywalls or strict usage limits. Loveable's functionality was impressive, but its output was clearly aimed at non-coders - a "no-code" black box that was unsuitable for self-hosting or professional maintenance.
 
-![Bolt battleships game design](bolt-designs.png)
+![Bolt battleships game design](bolt-design.png)
 
 [Bolt](https://bolt.new/) required a chaotic signup and login process but eventually generated a seemingly full-stack app. However, its use of React/TypeScript and a separate database meant it would require significant re-writing to host on Vercel, not a simple copy-paste job.
 
@@ -60,6 +60,8 @@ These tools proved that while AI can create complex apps, they aren't designed t
 - Its code output was modern best-practice Next.js, React, and TypeScript.
 - It offered direct GitHub integration, allowing me to easily manage versions and add custom files.
 
+![The ship placement page of the game using v0](v0-bug-1.png)
+
 V0 built 95% of the initial game structure and logic straight up, which was incredibly impressive. However, the experience was still a learning curve:
 
 - Prompt Limits: I frequently used up my daily allowance. This wasn't due to simple mistakes but because the AI needed several attempts to fix bugs, highlighting a lack of internal testing of its own generated code.
@@ -73,11 +75,15 @@ V0 successfully generated the fantastic structure (the crucial "80%"), but the A
 
 Once my V0 prompts ran out, Google Gemini (Pro, thanks to my employer) became my effective co-pilot:
 
+![A screenshot of a buggy ship placement page from v0](v0-bug-2.png)
+
 - Pinpoint Debugging: Gemini proved effective at taking complex errors, narrowing down the issue's location, and pointing out logic flaws or necessary code improvements
 - Code Explanation: Any generated code I copied over, Gemini was able to explain clearly, detailing its purpose and underlying logic. This helped me deeply understand the codebase and confidently identify necessary improvements.
 - Asset Creation: Gemini assisted in generating and refining the required image assets for sea tiles and ships, though—similar to V0—refining the output required persistence and careful prompting. A final shout-out goes to remove.bg and GIMP for their excellent, free image editing tools that made the assets web-ready.
 
 ### Overall Verdict: The 80% Rule
+
+![A battle scene from the final version built using V0](v0-battle-scene.png)
 
 My experience tells me that that AI design tools are not replacing developers yet, but they are dramatically accelerating development:
 
