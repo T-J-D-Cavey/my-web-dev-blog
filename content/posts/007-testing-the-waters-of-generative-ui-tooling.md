@@ -32,9 +32,11 @@ My experience with the current generation of AI design tools was mixed but I nev
 
 ### A. The Disappointments (Uizard, Visily, Banani, Stitch)
 
+This group was immediately frustrating. [Uizard](https://uizard.io/) and [Visily](https://www.visily.ai/) both had poor user experiences; Uizard hid its paywall, and Visily's chat functionality was broken.
+
 ![The user interface of a battleships game](unknown-game-ui.jpeg)
 
-This group was immediately frustrating. [Uizard](https://uizard.io/) and [Visily](https://www.visily.ai/) both had poor user experiences; Uizard hid its paywall, and Visily's chat functionality was broken. [Banani](https://www.banani.co/) provided designs that simply didn't match the prompt requirements. [Stitch with Google](https://stitch.withgoogle.com/) was quick, but only exported raw HTML, which was incompatible with my React stack. The takeaway here was simple: the free version of these tools are not ready for complex, functional application generation.
+[Banani](https://www.banani.co/) provided designs that simply didn't match the prompt requirements. [Stitch with Google](https://stitch.withgoogle.com/) was quick, but only exported raw HTML, which was incompatible with my React stack. The takeaway here was simple: the free version of these tools are not ready for complex, functional application generation.
 
 ### B. The Paywalls and Black Boxes (UXMagic, Loveable, Bolt)
 
@@ -83,9 +85,9 @@ Once my V0 prompts ran out, Google Gemini (Pro, thanks to my employer) became my
 
 ### Overall Verdict: The 80% Rule
 
-![A battle scene from the final version built using V0](v0-battle-scene.png)
+My experience tells me that that AI design tools are not replacing developers yet, but they are dramatically accelerating development.
 
-My experience tells me that that AI design tools are not replacing developers yet, but they are dramatically accelerating development:
+![A battle scene from the final version built using V0](v0-battle-scene.png)
 
 - AI gets you 80% of the way there. V0 provided the foundation, the styling, and the best-practice file structure in about an hour. Without it, the project would have taken weeks of UI/UX design and boilerplate coding.
 - A coder is still required. The remaining 20% - the bug fixing, the subtle CSS improvement, the custom game logic, and debugging conflicts - required over 30 hours of focused manual work. The final solution often involved using an LLM (Gemini) to guide a human coder (me) to the solution.
@@ -97,5 +99,5 @@ ps I loved most of the landing page designs:
 
 ![Unsued landing page with battleship guns](unused-landing-page-1.png) 
 
-![Another unused landing page design from the control room of a ship](unused-landing-page-1.png) 
+![Another unused landing page design from the control room of a ship](unused-landing-page-2.png) 
 
