@@ -6,6 +6,7 @@ excerpt: "My two-week journey using Vercel v0, Gemini, and several AI design too
 isFeatured: true
 ---
 
+## Want to play the game? [Click here to check it out](https://battleships-commander-of-the-seas.vercel.app/)
 ## The Mission: Why AI?
 
 The mission was straightforward: build a fun, visually engaging web version of Battleships while maximizing the use of free AI tools. As a self-taught, hobbyist developer, I aimed to put modern Large Language Models (LLMs) and popular generative design platforms to the test, exploring their true capabilities beyond the advertisements.
